@@ -133,3 +133,5 @@ gen### SVN template
 !.vscode/launch.json
 !.vscode/extensions.json
 
+/.classpath
+/.project
