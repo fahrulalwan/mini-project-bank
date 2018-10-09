@@ -12,9 +12,9 @@ public class Account implements Serializable {
 	private String cid;
 	private String name;
 	private String tipe;
-	private double balance;
-	private int norek;
-	
+	private Double balance;
+	private Integer norek;
+
 	public String getId() {
 		return id;
 	}
