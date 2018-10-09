@@ -8,18 +8,18 @@ import javax.persistence.ManyToOne;
 public class Account implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String id;
+	private Accountid id;
 	private String cid;
 	private String name;
 	private String tipe;
 	private Double balance;
 	private Integer norek;
 
-	public String getId() {
+	public Accountid getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Accountid id) {
 		this.id = id;
 	}
 
@@ -34,8 +34,6 @@ public class Account implements Serializable {
 	public String getName() {
 		return name;
 	}
-
-
 
 	public void setName(String name) {
 		this.name = name;

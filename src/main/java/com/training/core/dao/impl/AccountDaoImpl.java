@@ -5,13 +5,14 @@ package com.training.core.dao.impl;
 	import com.training.core.dao.HibernateBaseDao;
 	import com.training.core.dao.AccountDao;
 	import com.training.core.domain.Account;
+    import com.training.core.domain.Accountid;
 
-	public class AccountDaoImpl extends HibernateBaseDao implements AccountDao {
+public class AccountDaoImpl extends HibernateBaseDao implements AccountDao {
 
-		public Account selectAccountById(String accountId) {
+		public Account selectAccountById(Accountid accId) {
 			return (Account) getSessionFactory().getCurrentSession()
 	                .createQuery("from Account where id=:id")
-	                .setParameter("id", accountId)
+	                .setParameter("id", accId)
 	                .uniqueResult();
 		}
 
