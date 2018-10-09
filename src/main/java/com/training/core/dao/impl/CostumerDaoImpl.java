@@ -1,14 +1,14 @@
 package com.training.core.dao.impl;
 
-import java.util.List;
-
-import com.training.core.dao.HibernateBaseDao;
 import com.training.core.dao.CostumerDao;
+import com.training.core.dao.HibernateBaseDao;
 import com.training.core.domain.Costumer;
+
+import java.util.List;
 
 public class CostumerDaoImpl extends HibernateBaseDao implements CostumerDao {
 
-	public Costumer selectCostumerById(String costumerId) {
+	public Costumer selectCostumerById(Integer costumerId) {
 		return (Costumer) getSessionFactory().getCurrentSession()
                 .createQuery("from Costumer where id=:id")
                 .setParameter("id", costumerId)
@@ -27,7 +27,7 @@ public class CostumerDaoImpl extends HibernateBaseDao implements CostumerDao {
                 .save(costumer);
 	}
 	
-	public void deleteCostumerById(String costumerId) {
+	public void deleteCostumerById(Integer costumerId) {
 		Costumer costumer = (Costumer) getSessionFactory().getCurrentSession()
                 .createQuery("from Costumer where id=:id")
                 .setParameter("id", costumerId)

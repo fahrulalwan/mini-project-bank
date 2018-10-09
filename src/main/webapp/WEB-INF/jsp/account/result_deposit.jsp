@@ -23,26 +23,26 @@
         <%@ include file = "../layout/menubar.jsp" %>
 
         <div id="main">
-            <h2>Costumer Information</h2>
+            <h2>Deposit Result</h2>
             <table>
                 <tr>
                     <td>Name</td>
-                    <td>${account.name}</td>
+                    <td>${spn.name}</td>
                 </tr>
                 <tr>
                     <td>Nomor Rekening</td>
-                    <td>${account.norek}</td>
+                    <td>${spn.norek}</td>
                 </tr>
                 <tr>
                     <td>Saldo Sebelumnya</td>
-                    <td>${account.balance}</td>
+                    <td>${spn.balance}</td>
                 <tr>
                     <td>Jumlah Deposit</td>
-                    <td>${account.??}</td>
+                    <td>${deposit.amount}</td>
                 </tr>
                 <tr>
                     <td>Saldo setelahnya</td>
-                    <td>${account.balance}</td>
+                    <td>${spn.balance + deposit.amount}</td>
                 </tr>
 
                 </tr>

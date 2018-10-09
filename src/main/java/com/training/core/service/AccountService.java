@@ -1,14 +1,13 @@
 package com.training.core.service;
 
+import com.training.core.domain.Account;
+
 import java.util.List;
 
-import com.training.core.domain.Account;
-import com.training.core.domain.Accountid;
-
 public interface AccountService {
-	public Account getAccount(Accountid id);
+	public Account getAccount(Integer id);
 	public List<Account>getAccount();
 	public void insertAccount(Account account);
-	public void removeAccount(String id);
+	public void removeAccount(Integer id);
 	public void editAccount(Account account);
 }

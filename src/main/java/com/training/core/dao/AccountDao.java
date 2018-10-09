@@ -1,14 +1,13 @@
 package com.training.core.dao;
 
+import com.training.core.domain.Account;
+
 import java.util.List;
 
-import com.training.core.domain.Account;
-import com.training.core.domain.Accountid;
-
 public interface AccountDao {
-	  Account selectAccountById(Accountid accId);
+	  Account selectAccountById(Integer accountId);
 	  List<Account> selectAccount();
 	  void insertAccount(Account account);
-	  void deleteAccountById(String accountId);
+	  void deleteAccountById(Integer accountId);
 	  void updateAccount(Account account);
 } 

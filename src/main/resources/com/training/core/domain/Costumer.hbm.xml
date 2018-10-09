@@ -3,17 +3,17 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.training.core.domain.Costumer" table="Costumer">
-        <id name="id" type="string">
-            <column name="ID" length="20" not-null="true" />
+        <id name="id" type="integer">
+            <column name="ID" precision="20" not-null="true" />
         </id>
         <property name="name" type="string">
             <column name="NAME" length="255" not-null="true" />
         </property>
         <property name="alamat" type="string">
-            <column name="ALAMAT" precision="55" />
+            <column name="ALAMAT" length="255" not-null="true" />
         </property>
         <property name="ttl" type="string">
-            <column name="TTL" precision="55" />
+            <column name="TTL" length="255" not-null="true"/>
         </property>
         <bag name="daftaracc" cascade="all" lazy="false">
 			<key column="cid"/>

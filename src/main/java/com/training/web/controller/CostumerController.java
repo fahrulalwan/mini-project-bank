@@ -1,5 +1,7 @@
 package com.training.web.controller;
 
+import com.training.core.domain.Costumer;
+import com.training.core.service.CostumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -9,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
-
-import com.training.core.domain.Costumer;
-import com.training.core.service.CostumerService;
 
 @Controller
 @RequestMapping(value = "/costumer")
@@ -26,7 +25,7 @@ public class CostumerController {
 	}
 
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
-	public String getCostumer(@RequestParam("id") String id,
+	public String getCostumer(@RequestParam("id") Integer id,
 			ModelMap model) {
 		model.addAttribute("costumer", costumerService.getCostumer(id));	
 		Costumer x = costumerService.getCostumer(id);
@@ -46,7 +45,7 @@ public class CostumerController {
 	}
 	
 	@RequestMapping(value = "/form_edit", method = RequestMethod.GET)
-	public ModelAndView formEditCostumer(@RequestParam("id") String id) {
+	public ModelAndView formEditCostumer(@RequestParam("id") Integer id) {
 		return new ModelAndView("costumer/costumer_edit", "command", costumerService.getCostumer(id));	
 	}
 
@@ -58,7 +57,7 @@ public class CostumerController {
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-	public RedirectView deleteCostumer(@RequestParam("id") String id,
+	public RedirectView deleteCostumer(@RequestParam("id") Integer id,
 			ModelMap model) {
 		costumerService.removeCostumer(id);
 		return new RedirectView("../costumer/list");

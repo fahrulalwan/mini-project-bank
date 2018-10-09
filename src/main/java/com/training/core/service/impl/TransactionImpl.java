@@ -2,7 +2,6 @@ package com.training.core.service.impl;
 
 import com.training.core.dao.AccountDao;
 import com.training.core.domain.Account;
-import com.training.core.domain.Accountid;
 import com.training.core.model.Deposit;
 import com.training.core.model.Transfer;
 import com.training.core.model.Withdraw;
@@ -18,25 +17,39 @@ public class TransactionImpl implements Transaction {
     private AccountDao accountDao;
 
 
-
     @Transactional
     public Account simpanUang(Deposit deposit) {
         // check apakah sudah pernah ada barang tersebut di gudang tersebut
-        Accountid accId = new Accountid(deposit.getAcid());
-        Account acc = AccountDao.selectAccountById(accId);
-        acc.setBalance(acc.getBalance()+deposit.getAmount());
-        AccountDao.updateAccount(acc);
+        Integer accId = deposit.getAcid();
+        Account acc = accountDao.selectAccountById(accId);
+        acc.setBalance((int) (acc.getBalance() + deposit.getAmount()));
+        accountDao.updateAccount(acc);
         return acc;
     }
 
-    @Override
+    @Transactional
     public Account kirimUang(Transfer transfer) {
-        return null;
+        Integer accId = transfer.getAcid();
+        Account acc = accountDao.selectAccountById(accId);
+        if (acc.getBalance() >= transfer.getAmount() && acc.getBalance() >= 50000) {
+            acc.setBalance((int) (acc.getBalance() - transfer.getAmount()));
+        } else{
+            System.out.println("Insufficient Fund");
+        }
+        accountDao.updateAccount(acc);
+        return acc;
     }
 
-    @Override
+
+    @Transactional
     public Account ambilUang(Withdraw withdraw) {
-        return null;
+        Integer accId = withdraw.getAcid();
+        Account acc = accountDao.selectAccountById(accId);
+        if (acc.getBalance() >= withdraw.getAmount() && acc.getBalance() >= 50000){
+            acc.setBalance((int) (acc.getBalance() - withdraw.getAmount()));
+        }
+        accountDao.updateAccount(acc);
+        return acc;
     }
 
 //    @Transactional

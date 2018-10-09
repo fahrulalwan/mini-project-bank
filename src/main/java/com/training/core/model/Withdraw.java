@@ -3,24 +3,29 @@ package com.training.core.model;
 public class Withdraw {
     private Integer acid;
     private String tipe;
-    private Double amount;
+    private Integer amount;
 
-    public int getAcid() {
+    public Integer getAcid() {
         return acid;
     }
-    public void setAcid(int acid) {
+
+    public void setAcid(Integer acid) {
         this.acid = acid;
     }
+
     public String getTipe() {
         return tipe;
     }
+
     public void setTipe(String tipe) {
         this.tipe = tipe;
     }
-    public Double getAmount() {
+
+    public Integer getAmount() {
         return amount;
     }
-    public void setAmount(Double amount) {
+
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 

@@ -2,8 +2,8 @@ package com.training.core.service;
 
 import com.training.core.domain.Account;
 import com.training.core.model.Deposit;
-import com.training.core.model.Withdraw;
 import com.training.core.model.Transfer;
+import com.training.core.model.Withdraw;
 
 public interface Transaction {
 

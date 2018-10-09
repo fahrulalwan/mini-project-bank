@@ -1,12 +1,11 @@
 package com.training.core.service.impl;
 
-import java.util.List;
-
-import org.springframework.transaction.annotation.Transactional;
-
 import com.training.core.dao.AccountDao;
 import com.training.core.domain.Account;
 import com.training.core.service.AccountService;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 public class AccountServiceImpl implements AccountService {
 
@@ -17,7 +16,7 @@ public class AccountServiceImpl implements AccountService {
 		}
 
 		@Transactional
-		public Account getAccount(String id) {
+		public Account getAccount(Integer id) {
 			  return accountDao.selectAccountById(id);
 		}
 
@@ -32,7 +31,7 @@ public class AccountServiceImpl implements AccountService {
 		}
 
 		@Transactional
-		public void removeAccount(String id) {
+		public void removeAccount(Integer id) {
 			  accountDao.deleteAccountById(id);
 		}
 

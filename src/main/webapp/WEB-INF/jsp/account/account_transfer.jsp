@@ -22,15 +22,15 @@
                 <table>
                     <tr>
                         <td><form:label path="norek">norek</form:label></td>
-                        <td><form:input readonly="true" path="norek" />${account.norek}</td>
+                        <td><form:input readonly="true" path="norek" />${transfer.norek}</td>
                     </tr>
                     <tr>
-                        <td><form:label path="name">Nominal</form:label></td>
-                        <td><form:input path="name" /></td>
+                        <td><form:label path="amount">Amount</form:label></td>
+                        <td><form:input path="amount" /></td>
                     </tr>
                     <tr>
-                        <td><form:label path="norek">Rekening Tujuan</form:label></td>
-                        <td><form:input path="norek" /></td>
+                        <td><form:label path="rekTujuan">Rekening Tujuan</form:label></td>
+                        <td><form:input path="rekTujuan" />${transfer.norek}</td>
                     </tr>
 
                     <tr>

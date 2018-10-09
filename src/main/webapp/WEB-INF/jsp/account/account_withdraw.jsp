@@ -21,12 +21,12 @@
             <form:form method="POST" action="/miniapp/account/addWithdraw">
                 <table>
                     <tr>
-                        <td><form:label path="norek">norek</form:label></td>
-                        <td><form:input readonly="true" path="norek" />${account.norek}</td>
+                        <td><form:label path="norek">No. Rekening</form:label></td>
+                        <td><form:input readonly="true" path="norek" />${withdraw.norek}</td>
                     </tr>
                     <tr>
-                        <td><form:label path="name">Nominal</form:label></td>
-                        <td><form:input path="name" /></td>
+                        <td><form:label path="amount">Amount</form:label></td>
+                        <td><form:input path="amount" /></td>
                     </tr>
 
                     <tr>

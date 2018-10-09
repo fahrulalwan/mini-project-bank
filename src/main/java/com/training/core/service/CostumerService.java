@@ -1,13 +1,13 @@
 package com.training.core.service;
 
-import java.util.List;
-
 import com.training.core.domain.Costumer;
 
+import java.util.List;
+
 public interface CostumerService {
-	public Costumer getCostumer(String id);
+	public Costumer getCostumer(Integer id);
 	public List<Costumer>getCostumer();
 	public void insertCostumer(Costumer costumer);
-	public void removeCostumer(String id);
+	public void removeCostumer(Integer id);
 	public void editCostumer(Costumer costumer);
 }

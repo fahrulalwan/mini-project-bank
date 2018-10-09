@@ -1,12 +1,11 @@
 package com.training.core.service.impl;
 
-import java.util.List;
-
-import org.springframework.transaction.annotation.Transactional;
-
 import com.training.core.dao.CostumerDao;
 import com.training.core.domain.Costumer;
 import com.training.core.service.CostumerService;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 public class CostumerServiceImpl implements CostumerService {
 
@@ -17,7 +16,7 @@ public class CostumerServiceImpl implements CostumerService {
 		}
 
 		@Transactional
-		public Costumer getCostumer(String id) {
+		public Costumer getCostumer(Integer id) {
 			  return costumerDao.selectCostumerById(id);
 		}
 
@@ -32,7 +31,7 @@ public class CostumerServiceImpl implements CostumerService {
 		}
 
 		@Transactional
-		public void removeCostumer(String id) {
+		public void removeCostumer(Integer id) {
 			  costumerDao.deleteCostumerById(id);
 		}
 

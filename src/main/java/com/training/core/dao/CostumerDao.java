@@ -1,13 +1,13 @@
 package com.training.core.dao;
 
-import java.util.List;
-
 import com.training.core.domain.Costumer;
 
+import java.util.List;
+
 public interface CostumerDao {
-	  Costumer selectCostumerById(String costumerId);
+	  Costumer selectCostumerById(Integer costumerId);
 	  List<Costumer> selectCostumer();
 	  void insertCostumer(Costumer costumer);
-	  void deleteCostumerById(String costumerId);
+	  void deleteCostumerById(Integer costumerId);
 	  void updateCostumer(Costumer costumer);
 } 

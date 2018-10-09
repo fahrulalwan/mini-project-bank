@@ -6,13 +6,13 @@ import java.util.Collection;
 public class Costumer implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String id;
+	private Integer id;
 	private String alamat;
 	private String name;
 	private String ttl;
 	private Collection<Account> daftaracc;
 	private Account account;
-	
+
 	public Collection<Account> getDaftaracc() {
 		return daftaracc;
 	}
@@ -45,11 +45,11 @@ public class Costumer implements Serializable {
 		this.ttl = ttl;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

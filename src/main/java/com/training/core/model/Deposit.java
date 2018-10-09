@@ -3,7 +3,7 @@ package com.training.core.model;
 public class Deposit {
     private Integer acid;
     private String tipe;
-    private Double amount;
+    private Integer amount;
 
     public Integer getAcid() {
         return acid;
@@ -21,11 +21,11 @@ public class Deposit {
         this.tipe = tipe;
     }
 
-    public Double getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 }

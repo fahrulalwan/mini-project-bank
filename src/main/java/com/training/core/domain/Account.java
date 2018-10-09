@@ -2,83 +2,73 @@ package com.training.core.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 public class Account implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	private Accountid id;
-	private String cid;
-	private String name;
-	private String tipe;
-	private Double balance;
-	private Integer norek;
+    private static final long serialVersionUID = 1L;
+    private Integer id;
+    private Integer cid;
+    private String name;
+    private String tipe;
+    private Integer balance;
+    private Integer norek;
 
-	public Accountid getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Accountid id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getCid() {
-		return cid;
-	}
+    public Integer getCid() {
+        return cid;
+    }
 
-	public void setCid(String cid) {
-		this.cid = cid;
-	}
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-
-	public String getTipe() {
-		return tipe;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 
-
-	public void setTipe(String tipe) {
-		this.tipe = tipe;
-	}
-
+    public String getTipe() {
+        return tipe;
+    }
 
 
-	public double getBalance() {
-		return balance;
-	}
+    public void setTipe(String tipe) {
+        this.tipe = tipe;
+    }
 
 
-
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
-
+    public double getBalance() {
+        return balance;
+    }
 
 
-	public int getNorek() {
-		return norek;
-	}
+    public void setBalance(Integer balance) {
+        this.balance = balance;
+    }
 
 
-
-	public void setNorek(int norek) {
-		this.norek = norek;
-	}
-
+    public int getNorek() {
+        return norek;
+    }
 
 
-	@Override
-	public String toString() {
-		return "Account[Name="+getName()+", Type="+getTipe() + ", NoRek="+getNorek()+", Balance="+getBalance()+"]";
-	}
+    public void setNorek(Integer norek) {
+        this.norek = norek;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Account[Name=" + getName() + ", Type=" + getTipe() + ", NoRek=" + getNorek() + ", Balance=" + getBalance() + "]";
+    }
 }

@@ -3,23 +3,23 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.training.core.domain.Account" table="Account">
-        <id name="id" type="string">
-            <column name="ID" length="20" not-null="true" />
+        <id name="id" type="integer">
+            <column name="ID" precision="20" not-null="true" />
         </id>
-        <property name="cid" type="string">
-            <column name="CID" length="20" not-null="true" />
+        <property name="cid" type="integer">
+            <column name="CID" precision="20" not-null="true" />
         </property>
         <property name="name" type="string">
             <column name="NAME" length="255" not-null="true" />
         </property>
         <property name="tipe" type="string">
-            <column name="TIPE" precision="55" not-null="true"/>
+            <column name="TIPE" length="255" not-null="true"/>
         </property>
-        <property name="balance" type="double">
-            <column name="BALANCE" precision="55" not-null="true"/>
+        <property name="balance" type="integer">
+            <column name="BALANCE" precision="255" not-null="true"/>
         </property>
         <property name="norek" type="integer">
-            <column name="NOREK" precision="55" not-null="true"/>
+            <column name="NOREK" precision="10" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping> 
