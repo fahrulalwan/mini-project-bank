@@ -16,32 +16,34 @@
     <div class="wrapper">
         <%@ include file="../layout/menubar.jsp" %>
 
-        <div id="main">
-            <h2>Withdraw an Account</h2>
-            <form:form method="POST" action="/miniapp/account/addWithdraw">
-                <table>
-                    <tr>
-                        <td>Nama</td>
-                        <td><form:input path="nama" readonly="true"/></td>
-                    </tr>
-                    <tr>
-                        <td>No Rekening</td>
-                        <td><form:input path="norek" readonly="true"/></td>
-                    </tr>
-                    <tr>
-                        <td>Amount</td>
-                        <td><form:input path="amount" /></td>
-                    </tr>
+        <div id="main" class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <h2>Withdraw an Account</h2>
+                <form:form method="POST" action="/miniapp/account/addWithdraw">
+                    <table class="table table-hover">
 
-                    <tr>
-                        <td colspan="2"><input type="submit" value="Deposit"/></td>
-                    </tr>
-                </table>
-            </form:form>
+                        <tr>
+                            <td>No Rekening :</td>
+                            <td><form:input path="norek" readonly="true"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Amount :</td>
+                            <td><form:input path="amount"/></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Withdraw"/></td>
+                        </tr>
+                    </table>
+                </form:form>
+            </div>
 
         </div>
         <%@ include file="../layout/footer.jsp" %>
     </div>
 
+</div>
 </body>
 </html>

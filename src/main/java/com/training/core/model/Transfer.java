@@ -7,6 +7,10 @@ public class Transfer {
     private String tipe;
     private Integer norek;
     private String nama;
+    private Integer amount;
+    private Integer rekTujuan;
+    private String namaTujuan;
+    private Account account;
 
     public void setCid(Integer cid) {
         this.cid = cid;
@@ -19,11 +23,6 @@ public class Transfer {
     public void setNama(String nama) {
         this.nama = nama;
     }
-
-    private Integer amount;
-    private Integer rekTujuan;
-    private String namaTujuan;
-    private Account account;
 
     public Integer getNorek() {
         return norek;

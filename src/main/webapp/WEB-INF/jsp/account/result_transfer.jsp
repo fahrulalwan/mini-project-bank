@@ -18,39 +18,42 @@
 <body>
 
 <div class="container-fluid">
-    <%@ include file = "../layout/header.jsp" %>
+    <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file = "../layout/menubar.jsp" %>
+        <%@ include file="../layout/menubar.jsp" %>
 
-        <div id="main">
-            <h2>Transfer Result</h2>
-            <table>
-                <tr>
-                    <td>Name</td>
-                    <td>${trf.name}</td>
-                </tr>
-                <tr>
-                    <td>Nomor Rekening</td>
-                    <td>${trf.norek}</td>
-                </tr>
-                <tr>
-                    <td>Transfer Amount</td>
-                    <td>${transfer.amount}</td>
-                <tr>
-                    <td>Pemilik Rekening Tujuan</td>
-                    <td>${transfer.}</td>
-                </tr>
-                <tr>
-                    <td>Rekening Tujuan</td>
-                    <td>${transfer.rekTujuan}</td>
-                </tr>
+        <div id="main" class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <h2>Transfer Result</h2>
+                <table class="table table-hover">
+                    <tr>
+                        <td>Name</td>
+                        <td>${trf.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Nomor Rekening</td>
+                        <td>${trf.norek}</td>
+                    </tr>
+                    <tr>
+                        <td>Transfer Amount</td>
+                        <td>Rp. ${transfer.amount},-</td>
+                    </tr>
+                    <tr>
+                        <td>Pemilik Rekening Tujuan</td>
+                        <td>${transfer.namaTujuan}</td>
+                    </tr>
+                    <tr>
+                        <td>Rekening Tujuan</td>
+                        <td>${transfer.rekTujuan}</td>
+                    </tr>
 
-                </tr>
-            </table>
+                </table>
+            </div>
         </div>
 
     </div>
-    <%@ include file = "../layout/footer.jsp" %>
+    <%@ include file="../layout/footer.jsp" %>
 </div>
 
 </body>

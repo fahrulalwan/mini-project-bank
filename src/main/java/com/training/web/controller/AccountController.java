@@ -42,22 +42,25 @@ public class AccountController {
 		return new ModelAndView("account/result_deposit", "simpen", simpen);
 	}
 
-	@RequestMapping(value = "/formWithdraw", method = RequestMethod.GET)
-	public ModelAndView formWithdraw() {
-		return new ModelAndView("account/account_withdraw", "withdraw", new Withdraw());
+	@RequestMapping(value = "/formWithdraw/{norek}", method = RequestMethod.GET)
+	public ModelAndView formWithdraw(@PathVariable("norek") int norekening) {
+		Withdraw w = new Withdraw();
+		w.setNorek(norekening);
+		return new ModelAndView("account/account_withdraw", "command", w);
 	}
-
-	@RequestMapping(value = "/formTransfer", method = RequestMethod.GET)
-	public ModelAndView formTransfer() {
-		return new ModelAndView("account/account_transfer", "transfer", new Transfer());
-	}
-
 
 	@RequestMapping(value = "/addWithdraw", method = RequestMethod.POST)
 	public ModelAndView addWithdraw(@ModelAttribute("withdraw") Withdraw withdraw,
-								   ModelMap model) {
+									ModelMap model) {
 		Account tarik = transaction.ambilUang(withdraw);
 		return new ModelAndView("account/result_withdraw", "tarik", tarik);
+	}
+
+	@RequestMapping(value = "/formTransfer/{norek}", method = RequestMethod.GET)
+	public ModelAndView formTransfer(@PathVariable("norek") int norekening) {
+		Transfer t = new Transfer();
+		t.setNorek(norekening);
+		return new ModelAndView("account/account_transfer", "command", t);
 	}
 
 	@RequestMapping(value = "/addTransfer", method = RequestMethod.POST)

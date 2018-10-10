@@ -12,35 +12,38 @@
 <body>
 
 <div class="container-fluid">
-    <%@ include file = "../layout/header.jsp" %>
+    <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file = "../layout/menubar.jsp" %>
+        <%@ include file="../layout/menubar.jsp" %>
 
-        <div id="main">
-            <h2>Account Transfer</h2>
-            <form:form method="POST" action="/miniapp/account/addTransfer">
-                <table>
+        <div id="main" class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <h2>Account Transfer</h2>
+                <form:form method="POST" action="/miniapp/account/addTransfer">
+                <table class="table table-hover">
                     <tr>
-                        <td><form:label path="norek">norek</form:label></td>
-                        <td><form:input readonly="true" path="norek" />${transfer.norek}</td>
+                        <td>Nomor Rekening :</td>
+                        <td><form:input readonly="true" path="norek"/></td>
                     </tr>
                     <tr>
-                        <td><form:label path="amount">Amount</form:label></td>
-                        <td><form:input path="amount" /></td>
+                        <td>Amount :</td>
+                        <td><form:input path="amount"/></td>
                     </tr>
                     <tr>
-                        <td><form:label path="rekTujuan">Rekening Tujuan</form:label></td>
-                        <td><form:input path="rekTujuan" />${transfer.norek}</td>
+                        <td>Rekening Tujuan :</td>
+                        <td><form:input path="rekTujuan"/></td>
                     </tr>
 
                     <tr>
-                        <td colspan="2"><input type="submit" value="Transfer" /></td>
+                        <td colspan="2"><input type="submit" value="Transfer"/></td>
                     </tr>
                 </table>
+            </div>
             </form:form>
 
         </div>
-        <%@ include file = "../layout/footer.jsp" %>
+        <%@ include file="../layout/footer.jsp" %>
     </div>
 
 </body>

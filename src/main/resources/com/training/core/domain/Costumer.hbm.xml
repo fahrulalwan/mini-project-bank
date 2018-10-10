@@ -16,7 +16,7 @@
             <column name="TTL" length="255" not-null="true"/>
         </property>
         <bag name="daftaracc" cascade="all" lazy="false">
-			<key column="cid"/>
+			<key column="id"/>
 			<one-to-many class="com.training.core.domain.Account" />
 		</bag>
     </class>
