@@ -15,7 +15,7 @@
 	<%@ include file = "../layout/menubar.jsp" %>
     <div id="main">
 		<h2>List Costumer</h2>
-    	<table>
+    	<table class="table table-hover">
     		<thead>
 			<tr>
     			<th>ID</th>

@@ -1,10 +1,11 @@
 <div id="menubar">
      <ul id="menulist">
-       <li class="menuitem"><a href="/miniapp/costumer/list">List Costumer</a>
-       <li class="menuitem"><a href="/miniapp/costumer/form_add">Add Costumer</a>
-       <li class="menuitem"><a href="/miniapp/">Home</a>
-       <li class="menuitem"><a href="/miniapp/costumer/deposit">Deposit Balance</a>
- </body>      
+    <li class="menuitem"><a href="/miniapp/">Home</a></li>
+    <li class="menuitem"><a href="/miniapp/costumer/list">Costumer List</a></li>
+    <li class="menuitem"><a href="/miniapp/costumer/form_add">Add Costumer</a></li>
+    <li class="menuitem"><a href="/miniapp/account/list">Account Lists</a></li>
+
+    </body>
      </ul>
     </div>
 </html>

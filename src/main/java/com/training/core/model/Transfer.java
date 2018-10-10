@@ -5,20 +5,34 @@ import com.training.core.domain.Account;
 public class Transfer {
     private Integer acid;
     private String tipe;
+    private Integer norek;
     private Integer amount;
     private Integer rekTujuan;
     private String namaTujuan;
     private Account account;
 
+    public Integer getNorek() {
+        return norek;
+    }
 
-    public String getNamaTujuan(String namaTujuan) {
+    public void setNorek(Integer norek) {
+        this.norek = norek;
+    }
+
+    public String getNamaTujuan() {
         return namaTujuan;
     }
 
     public void setNamaTujuan(String namaTujuan) {
-        String fetchNama = account.getName(getRekTujuan().toString());
-        namaTujuan = fetchNama;
         this.namaTujuan = namaTujuan;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public Integer getRekTujuan() {

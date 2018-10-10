@@ -17,7 +17,7 @@
 
         <div id="main">
             <h2>Costumer Information</h2>
-            <table style="width: 20%">
+            <table class="table table-hover">
                 <tr>
                     <td>ID</td>
                     <td>${costumer.id}</td>
@@ -45,7 +45,7 @@
  			</form:form>
 
             <h2 align="top">Daftar Account</h2>
-            <table style="width: 60%">
+            <table class="table table-hover">
                 <tr>
                     <td>
                         <c:forEach var="account" items="${costumer.daftaracc}">
@@ -62,8 +62,8 @@
                                 <td>${account.norek}</td>
                             </tr>
                             <tr>
-                                <td>------------------------</td>
-                                <td>----------------------</td>
+                                <td>--------------------------</td>
+                                <td>--------------------------</td>
                             </tr>
                         </c:forEach>
                     </td>
@@ -75,19 +75,19 @@
                 <form>
                     Pilih Rekening : &nbsp;
                     <select name="accountlist">
-                        <c:forEach items="${list}" var="account">
-                            <option id="a" value="${account.norek}">${account.norek}</option>
+                        <c:forEach items="${costumer.daftaracc}" var="account">
+                            <option id= "a" value="${account.norek}">${account.norek}</option>
                         </c:forEach>
                     </select>
 
                     <br><br>
 
                     <input type="button" value="Deposit"
-                           onclick="document.location='/miniapp/account/formDeposit?id=${account.norek}'"/>
+                           onclick="document.location='/miniapp/account/formDeposit?id=${'#a'}'"/>
                     <input type="button" value="Withdraw"
-                           onclick="document.location='/miniapp/account/formWithdraw?id=${account.norek}'"/>
+                           onclick="document.location='/miniapp/account/formWithdraw?id=${'#a'}'"/>
                     <input type="button" value="Transfer"
-                           onclick="document.location='/miniapp/account/formTransfer?id=${account.norek}'"/>
+                           onclick="document.location='/miniapp/account/formTransfer?id=${'#a'}'"/>
                 </form>
             </div>
         </div>
