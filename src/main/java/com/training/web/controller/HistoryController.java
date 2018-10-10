@@ -16,7 +16,7 @@ public class HistoryController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView getHistory() {
-        return new ModelAndView("history", "list", historyService.getHistory());
+        return new ModelAndView("history/history", "list", historyService.getHistory());
     }
 
 }

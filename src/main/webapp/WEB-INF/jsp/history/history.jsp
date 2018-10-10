@@ -10,9 +10,9 @@
 <body>
 
 <div class="container-fluid">
-    <%@ include file=" layout/header.jsp" %>
+    <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file=" layout/menubar.jsp" %>
+        <%@ include file="../layout/menubar.jsp" %>
         <div id="main">
 
             <div class="row">
@@ -20,7 +20,7 @@
 
                 <div class="col-sm-10">
                     <h2>List Accounts</h2>
-                    <table class="table table-hover">
+                    <table id="tabel" class="table table-hover">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -36,10 +36,10 @@
                         <c:forEach var="history" items="${list}">
                             <tr>
 
-                                <td><c:out value="${history.hid}"/></a></td>
+                                <td><c:out value="${history.hid}"/></td>
                                 <td><c:out value="${history.norek}"/></td>
                                 <td><c:out value="${history.tipe}"/></td>
-                                <td><c:out value="${history.amount}"/></td>
+                                <td><c:out value="Rp. ${history.amount},-"/></td>
                                 <td><c:out value="${history.activity}"/></td>
                                 <td><c:out value="${history.rekTujuan}"/></td>
 
@@ -48,13 +48,13 @@
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
 
     </div>
-    <%@ include file=" layout/footer.jsp" %>
+    <%@ include file="../layout/footer.jsp" %>
 </div>
-
 </body>
 </html>
 
