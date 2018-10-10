@@ -6,7 +6,6 @@ import com.training.core.model.Deposit;
 import com.training.core.model.Transfer;
 import com.training.core.model.Withdraw;
 import com.training.core.service.Transaction;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,10 +17,10 @@ public class TransactionImpl implements Transaction {
 
     @Transactional
     public Account simpanUang(Deposit deposit) {
-        // check apakah sudah pernah ada barang tersebut di gudang tersebut
+
         Integer accId = deposit.getAcid();
         Account acc = accountDao.selectAccountById(accId);
-        acc.setBalance((int) (acc.getBalance() + deposit.getAmount()));
+        acc.setBalance(acc.getBalance() + deposit.getAmount());
         accountDao.updateAccount(acc);
         return acc;
     }
@@ -30,8 +29,9 @@ public class TransactionImpl implements Transaction {
     public Account kirimUang(Transfer transfer) {
         Integer accId = transfer.getAcid();
         Account acc = accountDao.selectAccountById(accId);
+
         if (acc.getBalance() >= transfer.getAmount() && acc.getBalance() >= 50000) {
-            acc.setBalance((int) (acc.getBalance() - transfer.getAmount()));
+            acc.setBalance(acc.getBalance() - transfer.getAmount());
         } else{
             System.out.println("Insufficient Fund");
         }
@@ -44,6 +44,7 @@ public class TransactionImpl implements Transaction {
     public Account ambilUang(Withdraw withdraw) {
         Integer accId = withdraw.getAcid();
         Account acc = accountDao.selectAccountById(accId);
+
         if (acc.getBalance() >= withdraw.getAmount() && acc.getBalance() >= 50000){
             acc.setBalance((int) (acc.getBalance() - withdraw.getAmount()));
         }

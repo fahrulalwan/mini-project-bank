@@ -2,11 +2,23 @@ package com.training.core.model;
 
 import com.training.core.domain.Account;
 
+import java.util.Collection;
+
 public class Deposit {
     private Integer acid;
     private String tipe;
     private Integer amount;
     private Integer norek;
+    private Collection<Account> colAccount;
+
+    public Collection<Account> getColAccount() {
+        return colAccount;
+    }
+
+    public void setColAccount(Collection<Account> colAccount) {
+        this.colAccount = colAccount;
+    }
+
     private Account account;
 
     public Integer getNorek() {

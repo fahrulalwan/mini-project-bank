@@ -21,10 +21,8 @@
             <form:form method="POST" action="/miniapp/account/addDeposit">
                 <table>
                     <tr>
-                        <c:forEach items="${costumer.daftaracc}" var="account">
-                            <td><form:label path="norek">No. Rekening</form:label></td>
-                            <td><form:input path="norek" readonly="true" value="${deposit.norek}"/>${deposit.norek}</td>
-                        </c:forEach>
+                        <td><form:label path="norek">No. Rekening</form:label></td>
+                        <td><form:input path="norek" readonly="true" value="${deposit.norek}"/>${deposit.norek}</td>
                     </tr>
                     <tr>
                         <td><form:label path="amount">Amount</form:label></td>

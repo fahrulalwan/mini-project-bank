@@ -14,30 +14,37 @@
     <div class="wrapper">
         <%@ include file="../layout/menubar.jsp" %>
         <div id="main">
-            <h2>List Accounts</h2>
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>No Rekening</th>
-                    <th>Tipe Rekening</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="account" items="${list}">
-                    <tr>
 
-                        <td><a href="/miniapp/costumer/view?id=${account.id}">
-                            <c:out value="${account.cid}"/></a></td>
-                        <td><c:out value="${account.name}"/></td>
-                        <td><c:out value="${account.norek}"/></td>
-                        <td><c:out value="${account.tipe}"/></td>
+            <div class="row">
+                <div class="col-sm-1"></div>
 
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+                <div class="col-sm-10">
+                    <h2>List Accounts</h2>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>No Rekening</th>
+                            <th>Tipe Rekening</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="account" items="${list}">
+                            <tr>
+
+                                <td><a href="/miniapp/costumer/view?id=${account.id}">
+                                    <c:out value="${account.cid}"/></a></td>
+                                <td><c:out value="${account.name}"/></td>
+                                <td><c:out value="${account.norek}"/></td>
+                                <td><c:out value="${account.tipe}"/></td>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
     </div>

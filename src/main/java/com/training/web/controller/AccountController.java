@@ -30,27 +30,20 @@ public class AccountController {
 		return new ModelAndView("account/account_list", "list", accountService.getAccount());
 	}
 
-	@RequestMapping(value = "/view", method = RequestMethod.GET)
-	public String getAccount(@RequestParam("id") Integer id,
-			ModelMap model) {
-		model.addAttribute("account", accountService.getAccount(id));	
-		Account x = accountService.getAccount(id);
-		return "account/account_view";
-	}
 
 	@RequestMapping(value = "/formDeposit", method = RequestMethod.GET)
 	public ModelAndView formDeposit() {
-		return new ModelAndView("account/account_deposit", "deposit", new Account());
+		return new ModelAndView("account/account_deposit", "deposit", new Deposit());
 	}
 
 	@RequestMapping(value = "/formWithdraw", method = RequestMethod.GET)
 	public ModelAndView formWithdraw() {
-		return new ModelAndView("account/account_withdraw", "withdraw", new Account());
+		return new ModelAndView("account/account_withdraw", "withdraw", new Withdraw());
 	}
 
 	@RequestMapping(value = "/formTransfer", method = RequestMethod.GET)
 	public ModelAndView formTransfer() {
-		return new ModelAndView("account/account_transfer", "transfer", new Account());
+		return new ModelAndView("account/account_transfer", "transfer", new Transfer());
 	}
 
 
@@ -58,15 +51,16 @@ public class AccountController {
 	public ModelAndView addDeposit(@ModelAttribute("deposit") Deposit deposit,
 			ModelMap model) {
 		Account simpen = transaction.simpanUang(deposit);
-		return new ModelAndView("account/result_deposit", "spn", simpen);
+		return new ModelAndView("account/result_deposit", "simpen", simpen);
 	}
 
 	@RequestMapping(value = "/addWithdraw", method = RequestMethod.POST)
 	public ModelAndView addWithdraw(@ModelAttribute("withdraw") Withdraw withdraw,
 								   ModelMap model) {
-		Account tarik = (Account) transaction.ambilUang(withdraw);
-		return new ModelAndView("account/result_withdraw", "nrk", tarik);
+		Account tarik = transaction.ambilUang(withdraw);
+		return new ModelAndView("account/result_withdraw", "tarik", tarik);
 	}
+
 	@RequestMapping(value = "/addTransfer", method = RequestMethod.POST)
 	public ModelAndView addTransfer(@ModelAttribute("transfer") Transfer transfer,
 								   ModelMap model) {
