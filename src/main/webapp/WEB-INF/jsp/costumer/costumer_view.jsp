@@ -44,7 +44,7 @@
                    onclick="document.location='/miniapp/costumer/form_edit?id=${costumer.id}'"/>
  			</form:form>
 
-            <h2 align="top">Daftar Account</h2>
+            <h2>Daftar Account</h2>
             <table class="table table-hover">
                 <tr>
                     <td>
