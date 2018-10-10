@@ -20,7 +20,11 @@ public class Account implements Serializable {
         this.id = id;
     }
 
-    public Integer getCid() {
+    public String getName() {
+		return name;
+	}
+
+	public Integer getCid() {
         return cid;
     }
 
@@ -28,7 +32,7 @@ public class Account implements Serializable {
         this.cid = cid;
     }
 
-    public String getName() {
+    public String getName(String string) {
         return name;
     }
 
@@ -47,7 +51,7 @@ public class Account implements Serializable {
     }
 
 
-    public double getBalance() {
+    public int getBalance() {
         return balance;
     }
 
@@ -69,6 +73,6 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "Account[Name=" + getName() + ", Type=" + getTipe() + ", NoRek=" + getNorek() + ", Balance=" + getBalance() + "]";
+        return "Account[Name=" + getName(name) + ", Type=" + getTipe() + ", NoRek=" + getNorek() + ", Balance=" + getBalance() + "]";
     }
 }

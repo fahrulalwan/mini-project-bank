@@ -34,22 +34,18 @@
                     <td>TTL</td>
                     <td>${costumer.ttl}</td>
                 </tr>
-                <tr>
-                    <td>------------------------</td>
-                    <td>----------------------</td>
-                </tr>
 
             </table>
 
             <form:form method="POST" action="/miniapp/costumer/delete?id=${costumer.id}">
                 <input type="submit" value="Delete"/>
-            </form:form>
+           
             <input type="button" value="Update"
                    onclick="document.location='/miniapp/costumer/form_edit?id=${costumer.id}'"/>
-
+ 			</form:form>
 
             <h2 align="top">Daftar Account</h2>
-            <table style="width: 40%">
+            <table style="width: 60%">
                 <tr>
                     <td>
                         <c:forEach var="account" items="${costumer.daftaracc}">

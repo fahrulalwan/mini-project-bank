@@ -10,7 +10,6 @@ public class Transfer {
     private String namaTujuan;
     private Account account;
 
-    private objek = new Transfer();
 
     public String getNamaTujuan(String namaTujuan) {
         return namaTujuan;
