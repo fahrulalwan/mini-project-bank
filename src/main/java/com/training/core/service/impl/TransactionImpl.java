@@ -1,48 +1,74 @@
 package com.training.core.service.impl;
 
 import com.training.core.dao.AccountDao;
+import com.training.core.dao.HistoryDao;
 import com.training.core.domain.Account;
+import com.training.core.domain.History;
 import com.training.core.model.Deposit;
 import com.training.core.model.Transfer;
 import com.training.core.model.Withdraw;
 import com.training.core.service.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("Transaction")
 public class TransactionImpl implements Transaction {
 
+    @Autowired
     private AccountDao accountDao;
 
+    @Autowired
+    private HistoryDao historyDao;
 
     @Transactional
     public Account simpanUang(Deposit deposit) {
 
-        Integer accId = deposit.getAcid();
-        Account acc = accountDao.selectAccountById(accId);
+        Integer norek = deposit.getNorek();
+        Account acc = accountDao.selectAccountByNorek(norek);
         acc.setBalance(acc.getBalance() + deposit.getAmount());
         accountDao.updateAccount(acc);
+
+        History createHistory = new History();
+        createHistory.setHid(historyDao.countHistory() + 1);
+        createHistory.setActivity("Deposit");
+        createHistory.setAmount(deposit.getAmount());
+        createHistory.setNorek(norek);
+        createHistory.setTipe(acc.getTipe());
+        createHistory.setBalance(acc.getBalance());
+
+        historyDao.insertHistory(createHistory);
         return acc;
     }
 
     @Transactional
     public Account kirimUang(Transfer transfer) {
-        Integer accId = transfer.getAcid();
-        Account acc = accountDao.selectAccountById(accId);
 
-        if (acc.getBalance() >= transfer.getAmount() && acc.getBalance() >= 50000) {
-            acc.setBalance(acc.getBalance() - transfer.getAmount());
-        } else{
+        Integer norek1 = transfer.getNorek();
+        Account acc1 = accountDao.selectAccountByNorek(norek1);
+
+        Integer norek2 = transfer.getNorek();
+        Account acc2 = accountDao.selectAccountByNorek(norek2);
+
+        if (acc1.getBalance() >= transfer.getAmount() && acc1.getBalance() >= 50000) {
+            acc1.setBalance(acc1.getBalance() - transfer.getAmount());
+            acc2.setBalance(acc2.getBalance() + transfer.getAmount());
+
+        } else {
+
             System.out.println("Insufficient Fund");
+
         }
-        accountDao.updateAccount(acc);
-        return acc;
+        accountDao.updateAccount(acc1);
+        accountDao.updateAccount(acc2);
+
+        return acc1;
     }
 
 
     @Transactional
     public Account ambilUang(Withdraw withdraw) {
-        Integer accId = withdraw.getAcid();
+        Integer accId = withdraw.getCid();
         Account acc = accountDao.selectAccountById(accId);
 
         if (acc.getBalance() >= withdraw.getAmount() && acc.getBalance() >= 50000){

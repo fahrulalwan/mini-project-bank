@@ -5,6 +5,7 @@ import com.training.core.domain.Costumer;
 import java.util.List;
 
 public interface CostumerDao {
+
 	  Costumer selectCostumerById(Integer costumerId);
 	  List<Costumer> selectCostumer();
 	  void insertCostumer(Costumer costumer);

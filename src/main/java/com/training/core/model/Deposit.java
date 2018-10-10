@@ -5,11 +5,21 @@ import com.training.core.domain.Account;
 import java.util.Collection;
 
 public class Deposit {
-    private Integer acid;
+    private Integer cid;
     private String tipe;
     private Integer amount;
     private Integer norek;
+    private String nama;
     private Collection<Account> colAccount;
+
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
 
     public Collection<Account> getColAccount() {
         return colAccount;
@@ -37,12 +47,12 @@ public class Deposit {
         this.account = account;
     }
 
-    public Integer getAcid() {
-        return acid;
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setAcid(Integer acid) {
-        this.acid = acid;
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
     public String getTipe() {

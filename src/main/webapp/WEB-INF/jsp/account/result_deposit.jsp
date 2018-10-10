@@ -27,22 +27,22 @@
             <table>
                 <tr>
                     <td>Name</td>
-                    <td>${spn.name}</td>
+                    <td>${simpen.name}</td>
                 </tr>
                 <tr>
                     <td>Nomor Rekening</td>
-                    <td>${spn.norek}</td>
+                    <td>${simpen.norek}</td>
                 </tr>
                 <tr>
                     <td>Saldo Sebelumnya</td>
-                    <td>${spn.balance}</td>
+                    <td>${simpen.balance}</td>
                 <tr>
                     <td>Jumlah Deposit</td>
                     <td>${deposit.amount}</td>
                 </tr>
                 <tr>
                     <td>Saldo setelahnya</td>
-                    <td>${spn.balance + deposit.amount}</td>
+                    <td>${simpen.balance + deposit.amount}</td>
                 </tr>
 
                 </tr>

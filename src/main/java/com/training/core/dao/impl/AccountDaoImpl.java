@@ -15,6 +15,13 @@ public class AccountDaoImpl extends HibernateBaseDao implements AccountDao {
                 .uniqueResult();
     }
 
+    public Account selectAccountByNorek(Integer norek) {
+        return (Account) getSessionFactory().getCurrentSession()
+                .createQuery("from Account where norek=:norek")
+                .setParameter("norek", norek)
+                .uniqueResult();
+    }
+
     @SuppressWarnings("unchecked")
     public List<Account> selectAccount() {
         return getSessionFactory().getCurrentSession()

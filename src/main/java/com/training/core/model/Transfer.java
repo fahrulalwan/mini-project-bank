@@ -3,9 +3,23 @@ package com.training.core.model;
 import com.training.core.domain.Account;
 
 public class Transfer {
-    private Integer acid;
+    private Integer cid;
     private String tipe;
     private Integer norek;
+    private String nama;
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
     private Integer amount;
     private Integer rekTujuan;
     private String namaTujuan;
@@ -43,12 +57,12 @@ public class Transfer {
         this.rekTujuan = rekTujuan;
     }
 
-    public int getAcid() {
-        return acid;
+    public int getCid() {
+        return cid;
     }
 
-    public void setAcid(int acid) {
-        this.acid = acid;
+    public void setCid(int cid) {
+        this.cid = cid;
     }
 
     public String getTipe() {

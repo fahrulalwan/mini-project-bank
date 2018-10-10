@@ -9,10 +9,7 @@ import com.training.core.service.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -31,9 +28,18 @@ public class AccountController {
 	}
 
 
-	@RequestMapping(value = "/formDeposit", method = RequestMethod.GET)
-	public ModelAndView formDeposit() {
-		return new ModelAndView("account/account_deposit", "deposit", new Deposit());
+	@RequestMapping(value = "/formDeposit/{norek}", method = RequestMethod.GET)
+	public ModelAndView formDeposit(@PathVariable("norek") int norekening) {
+		Deposit d =  new Deposit();
+		d.setNorek(norekening);
+		return new ModelAndView("account/account_deposit", "command", d);
+	}
+
+	@RequestMapping(value = "/addDeposit", method = RequestMethod.POST)
+	public ModelAndView addDeposit(@ModelAttribute("deposit") Deposit deposit,
+								   ModelMap model) {
+		Account simpen = transaction.simpanUang(deposit);
+		return new ModelAndView("account/result_deposit", "simpen", simpen);
 	}
 
 	@RequestMapping(value = "/formWithdraw", method = RequestMethod.GET)
@@ -46,13 +52,6 @@ public class AccountController {
 		return new ModelAndView("account/account_transfer", "transfer", new Transfer());
 	}
 
-
-	@RequestMapping(value = "/addDeposit", method = RequestMethod.POST)
-	public ModelAndView addDeposit(@ModelAttribute("deposit") Deposit deposit,
-			ModelMap model) {
-		Account simpen = transaction.simpanUang(deposit);
-		return new ModelAndView("account/result_deposit", "simpen", simpen);
-	}
 
 	@RequestMapping(value = "/addWithdraw", method = RequestMethod.POST)
 	public ModelAndView addWithdraw(@ModelAttribute("withdraw") Withdraw withdraw,

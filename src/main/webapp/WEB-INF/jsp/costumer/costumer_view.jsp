@@ -76,7 +76,7 @@
                 <div align="center">
                     <form>
                         Pilih Rekening : &nbsp;
-                        <select name="accountlist">
+                        <select id="list" name="accountlist">
                             <c:forEach items="${costumer.daftaracc}" var="account">
                                 <option id="a" value="${account.norek}">${account.norek}</option>
                             </c:forEach>
@@ -85,11 +85,11 @@
                         <br><br>
 
                         <input type="button" value="Deposit"
-                               onclick="document.location='/miniapp/account/formDeposit?id=${'#a'}'"/>
+                               onclick="deposit()"/>
                         <input type="button" value="Withdraw"
-                               onclick="document.location='/miniapp/account/formWithdraw?id=${'#a'}'"/>
+                               onclick="withdraw()"/>
                         <input type="button" value="Transfer"
-                               onclick="document.location='/miniapp/account/formTransfer?id=${'#a'}'"/>
+                               onclick="transfer()"/>
                 </div>
                 </form>
             </div>
@@ -97,6 +97,22 @@
         </div>
         <%@ include file="../layout/footer.jsp" %>
     </div>
-
+<script>
+    function deposit() {
+        var e = document.getElementById("list");
+        var strUser = e.options[e.selectedIndex].value;
+        document.location.href = "/miniapp/account/formDeposit/"+strUser;
+    }
+    function withdraw() {
+        var e = document.getElementById("list");
+        var strUser = e.options[e.selectedIndex].value;
+        document.location.href = "/miniapp/account/formDeposit?id="+strUser;
+    }
+    function transfer() {
+        var e = document.getElementById("list");
+        var strUser = e.options[e.selectedIndex].value;
+        document.location.href = "/miniapp/account/formDeposit?id="+strUser;
+    }
+</script>
 </body>
 </html>

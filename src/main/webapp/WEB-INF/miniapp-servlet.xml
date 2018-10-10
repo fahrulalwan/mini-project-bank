@@ -26,7 +26,7 @@
 			<list>
 				<value>com/training/core/domain/Costumer.hbm.xml</value>
 				<value>com/training/core/domain/Account.hbm.xml</value>
-
+				<value>com/training/core/domain/History.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -48,12 +48,21 @@
 	<bean id="costumerService" class="com.training.core.service.impl.CostumerServiceImpl">
 		<property name="costumerDao" ref="costumerDao" />
 	</bean>
+
 	<bean id="accountDao" class="com.training.core.dao.impl.AccountDaoImpl"
 		  parent="daoTemplate">
 	</bean>
 
 	<bean id="accountService" class="com.training.core.service.impl.AccountServiceImpl">
 		<property name="accountDao" ref="accountDao" />
+	</bean>
+
+	<bean id="historyDao" class="com.training.core.dao.impl.HistoryDaoImpl"
+		  parent="daoTemplate">
+	</bean>
+
+	<bean id="historyService" class="com.training.core.service.impl.HistoryServiceImpl">
+		<property name="historyDao" ref="historyDao" />
 	</bean>
 
 	<bean id="transactionManager"

@@ -21,12 +21,17 @@
             <form:form method="POST" action="/miniapp/account/addDeposit">
                 <table>
                     <tr>
-                        <td><form:label path="norek">No. Rekening</form:label></td>
-                        <td><form:input path="norek" readonly="true" value="${deposit.norek}"/>${deposit.norek}</td>
+                        <td>Nama</td>
+                        <td><form:input path="nama" readonly="true"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>No Rekening</td>
+                        <td><form:input path="norek" readonly="true"/></td>
                     </tr>
                     <tr>
-                        <td><form:label path="amount">Amount</form:label></td>
-                        <td><form:input path="amount"/></td>
+                        <td>Amount</td>
+                        <td><form:input path="amount" /></td>
                     </tr>
 
                     <tr>

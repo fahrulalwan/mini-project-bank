@@ -9,34 +9,34 @@ import java.util.List;
 
 public class CostumerServiceImpl implements CostumerService {
 
-		private CostumerDao costumerDao;
-	
-		public void setCostumerDao(CostumerDao costumerDao) {
-		  this.costumerDao = costumerDao;
-		}
+    private CostumerDao costumerDao;
 
-		@Transactional
-		public Costumer getCostumer(Integer id) {
-			  return costumerDao.selectCostumerById(id);
-		}
+    public void setCostumerDao(CostumerDao costumerDao) {
+        this.costumerDao = costumerDao;
+    }
 
-		@Transactional
-		public List<Costumer>getCostumer() {
-		  return costumerDao.selectCostumer();
-		}
-		
-		@Transactional
-		public void insertCostumer(Costumer costumer) {
-			costumerDao.insertCostumer(costumer);
-		}
+    @Transactional
+    public Costumer getCostumer(Integer id) {
+        return costumerDao.selectCostumerById(id);
+    }
 
-		@Transactional
-		public void removeCostumer(Integer id) {
-			  costumerDao.deleteCostumerById(id);
-		}
+    @Transactional
+    public List<Costumer> getCostumer() {
+        return costumerDao.selectCostumer();
+    }
 
-		@Transactional
-		public void editCostumer(Costumer costumer) {
-			costumerDao.updateCostumer(costumer);
-		}
+    @Transactional
+    public void insertCostumer(Costumer costumer) {
+        costumerDao.insertCostumer(costumer);
+    }
+
+    @Transactional
+    public void removeCostumer(Integer id) {
+        costumerDao.deleteCostumerById(id);
+    }
+
+    @Transactional
+    public void editCostumer(Costumer costumer) {
+        costumerDao.updateCostumer(costumer);
+    }
 }
