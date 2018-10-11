@@ -23,7 +23,7 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>CostumerID</th>
+                            <th>Costumer ID</th>
                             <th>Name</th>
                             <th>No Rekening</th>
                             <th>Tipe Rekening</th>
@@ -33,8 +33,8 @@
                         <c:forEach var="account" items="${list}">
                             <tr>
 
-                                <td><a href="/miniapp/costumer/view?id=${account.id}">
-                                    <c:out value="${account.cid}"/></a></td>
+                                <td><a href="/miniapp/costumer/view?id=${account.cid}">
+                                    <c:out value="${account.id}"/></a></td>
                                 <td><c:out value="${account.name}"/></td>
                                 <td><c:out value="${account.norek}"/></td>
                                 <td><c:out value="${account.tipe}"/></td>

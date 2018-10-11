@@ -11,9 +11,11 @@
 
 <div class="container-fluid">
   <%@ include file = "layout/header.jsp" %>
+
   <div class="wrapper">
 	<%@ include file = "layout/menubar.jsp" %>
-  </div>      
+  </div>
+
   <%@ include file = "layout/footer.jsp" %>
 </div>
 

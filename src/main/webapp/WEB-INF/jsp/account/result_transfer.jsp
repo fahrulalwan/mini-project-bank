@@ -40,10 +40,6 @@
                         <td>Rp. ${transfer.amount},-</td>
                     </tr>
                     <tr>
-                        <td>Pemilik Rekening Tujuan</td>
-                        <td>${transfer.namaTujuan}</td>
-                    </tr>
-                    <tr>
                         <td>Rekening Tujuan</td>
                         <td>${transfer.rekTujuan}</td>
                     </tr>

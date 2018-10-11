@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <td>Balance</td>
-                        <td>${account.balance}</td>
+                        <td>Rp. ${account.balance},-</td>
                     </tr>
                 </table>
             </div>

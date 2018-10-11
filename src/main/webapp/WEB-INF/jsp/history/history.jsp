@@ -19,7 +19,7 @@
                 <div class="col-sm-1"></div>
 
                 <div class="col-sm-10">
-                    <h2>List Accounts</h2>
+                    <h2>History</h2>
                     <table id="tabel" class="table table-hover">
                         <thead>
                         <tr>

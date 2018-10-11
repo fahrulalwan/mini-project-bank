@@ -21,10 +21,7 @@
                 <h2>Add an Account</h2>
                 <form:form method="POST" action="/miniapp/account/add">
                     <table class="table table-hover">
-                        <tr>
-                            <td><form:label path="id">id</form:label></td>
-                            <td><form:input path="id"/></td>
-                        </tr>
+
                         <tr>
                             <td><form:label path="cid">Costumerid</form:label></td>
                             <td><form:input path="cid"/></td>

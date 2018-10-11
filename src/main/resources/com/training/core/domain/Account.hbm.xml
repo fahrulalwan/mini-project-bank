@@ -5,6 +5,7 @@
     <class name="com.training.core.domain.Account" table="Account">
         <id name="id" type="integer">
             <column name="ID" precision="20" not-null="true" />
+            <generator class="increment"/>
         </id>
         <property name="cid" type="integer">
             <column name="CID" precision="20" not-null="true" />
