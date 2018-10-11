@@ -23,7 +23,7 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>Costumer ID</th>
+                            <th>Account ID</th>
                             <th>Name</th>
                             <th>No Rekening</th>
                             <th>Tipe Rekening</th>
