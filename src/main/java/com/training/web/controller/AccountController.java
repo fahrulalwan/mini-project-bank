@@ -1,6 +1,7 @@
 package com.training.web.controller;
 
 import com.training.core.domain.Account;
+import com.training.core.domain.Costumer;
 import com.training.core.model.Deposit;
 import com.training.core.model.Transfer;
 import com.training.core.model.Withdraw;
@@ -25,6 +26,18 @@ public class AccountController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView getAccount() {
 		return new ModelAndView("account/account_list", "list", accountService.getAccount());
+	}
+	
+	@RequestMapping(value = "/form_add", method = RequestMethod.GET)
+	public ModelAndView formAddAccount() {
+		return new ModelAndView("account/account_add", "command", new Account());
+	}
+	
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public ModelAndView addAccount(@ModelAttribute("account") Account account,
+			ModelMap model) {
+		accountService.insertAccount(account);
+		return new ModelAndView("account/account_result", "command", new Account()); 
 	}
 
 

@@ -74,6 +74,8 @@
 
 	<context:component-scan base-package="com.training.web.controller" />
 	<context:component-scan base-package="com.training.core.service" />
+		<context:component-scan base-package="com.training.core.dao" />
+	
 	<bean
 			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />

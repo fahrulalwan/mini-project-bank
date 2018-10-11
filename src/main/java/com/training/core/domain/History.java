@@ -15,7 +15,6 @@ public class History implements Serializable {
 
     private Integer norek;
     private String tipe;
-    private Integer balance;
     private Integer amount;
     private String activity;
     private Integer rekTujuan;
@@ -45,13 +44,6 @@ public class History implements Serializable {
         this.tipe = tipe;
     }
 
-    public Integer getBalance() {
-        return balance;
-    }
-
-    public void setBalance(Integer balance) {
-        this.balance = balance;
-    }
 
     public Integer getAmount() {
         return amount;

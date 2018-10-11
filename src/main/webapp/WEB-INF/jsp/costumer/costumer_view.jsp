@@ -43,6 +43,8 @@
                                onclick="document.location='/miniapp/costumer/form_edit?id=${costumer.id}'"/>
 
                         <input type="submit" value="Delete"/>
+                        <input type="button" value="addAccount"
+                        		onclick="document.location='/miniapp/account/form_add?id=${costumer.id}'"/>
 
                     </form:form>
                 </div>
@@ -52,7 +54,7 @@
 
             <div class="col-sm-4">
                 <h2>Daftar Account</h2>
-                <table class="table table-hover" id="tabel">
+                <table class="table table-hover">
                     <c:forEach var="account" items="${costumer.daftaracc}">
                         <tr>
                             <td>Type</td>
@@ -90,32 +92,30 @@
                                onclick="withdraw()"/>
                         <input type="button" value="Transfer"
                                onclick="transfer()"/>
-
-                    </form>
+                        
                 </div>
+                </form>
             </div>
 
         </div>
         <%@ include file="../layout/footer.jsp" %>
     </div>
-    <script>
-        function deposit() {
-            var e = document.getElementById("list");
-            var strUser = e.options[e.selectedIndex].value;
-            document.location.href = "/miniapp/account/formDeposit/" + strUser;
-        }
-
-        function withdraw() {
-            var e = document.getElementById("list");
-            var strUser = e.options[e.selectedIndex].value;
-            document.location.href = "/miniapp/account/formWithdraw/" + strUser;
-        }
-
-        function transfer() {
-            var e = document.getElementById("list");
-            var strUser = e.options[e.selectedIndex].value;
-            document.location.href = "/miniapp/account/formTransfer/" + strUser;
-        }
-    </script>
+<script>
+    function deposit() {
+        var e = document.getElementById("list");
+        var strUser = e.options[e.selectedIndex].value;
+        document.location.href = "/miniapp/account/formDeposit/"+strUser;
+    }
+    function withdraw() {
+        var e = document.getElementById("list");
+        var strUser = e.options[e.selectedIndex].value;
+        document.location.href = "/miniapp/account/formWithdraw/"+strUser;
+    }
+    function transfer() {
+        var e = document.getElementById("list");
+        var strUser = e.options[e.selectedIndex].value;
+        document.location.href = "/miniapp/account/formTransfer/"+strUser;
+    }
+</script>
 </body>
 </html>

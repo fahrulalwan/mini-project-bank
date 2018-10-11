@@ -1,4 +1,4 @@
-package com.training.core.domain;
+	package com.training.core.domain;
 
 import java.io.Serializable;
 
@@ -12,67 +12,82 @@ public class Account implements Serializable {
     private Integer balance;
     private Integer norek;
 
+   
+
     public Integer getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public String getName() {
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+
+	public Integer getCid() {
+		return cid;
+	}
+
+
+
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+
+
+
+	public String getName() {
 		return name;
 	}
 
-	public Integer getCid() {
-        return cid;
-    }
-
-    public void setCid(Integer cid) {
-        this.cid = cid;
-    }
-
-    public String getName(String string) {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
 
-    public String getTipe() {
-        return tipe;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
 
-    public void setTipe(String tipe) {
-        this.tipe = tipe;
-    }
+
+	public String getTipe() {
+		return tipe;
+	}
 
 
-    public int getBalance() {
-        return balance;
-    }
+
+	public void setTipe(String tipe) {
+		this.tipe = tipe;
+	}
 
 
-    public void setBalance(Integer balance) {
-        this.balance = balance;
-    }
+
+	public Integer getBalance() {
+		return balance;
+	}
 
 
-    public int getNorek() {
-        return norek;
-    }
+
+	public void setBalance(Integer balance) {
+		this.balance = balance;
+	}
 
 
-    public void setNorek(Integer norek) {
-        this.norek = norek;
-    }
+
+	public Integer getNorek() {
+		return norek;
+	}
 
 
-    @Override
+
+	public void setNorek(Integer norek) {
+		this.norek = norek;
+	}
+
+
+
+	@Override
     public String toString() {
-        return "Account[Name=" + getName(name) + ", Type=" + getTipe() + ", NoRek=" + getNorek() + ", Balance=" + getBalance() + "]";
+        return "Account[Name=" + getName() + ", Type=" + getTipe() + ", NoRek=" + getNorek() + ", Balance=" + getBalance() + "]";
     }
 }
