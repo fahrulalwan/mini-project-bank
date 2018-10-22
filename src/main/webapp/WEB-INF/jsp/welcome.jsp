@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="<c:url value="/resources/css/default.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/theme1/css/default.css" />" rel="stylesheet" type="text/css"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>BankApp</title>
 </head>
 <body>
 
