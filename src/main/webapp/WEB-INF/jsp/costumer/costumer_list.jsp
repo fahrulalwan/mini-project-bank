@@ -34,10 +34,10 @@
                                 <td><a href="http://localhost:8080/miniapp/costumer/view?id=${costumer.id}">
                                     <c:out value="${costumer.id}"/></a></td>
                                 <td><c:out value="${costumer.name}"/></td>
-                                <td><c:out value="${costumer.name}?????"/></td>
-                                <td><c:out value="${costumer.name}?????"/></td>
-                                <td><c:out value="${costumer.alamat}"/></td>
-                                <td><c:out value="${costumer.ttl}"/></td>
+                                <td><c:out value="${costumer.id_Number}"/></td>
+                                <td><c:out value="${costumer.mother_Name}"/></td>
+                                <td><c:out value="${costumer.address}"/></td>
+                                <td><c:out value="${costumer.birth_Date}"/></td>
 
                             </tr>
                         </c:forEach>

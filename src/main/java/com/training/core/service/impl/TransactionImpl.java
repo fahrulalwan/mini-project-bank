@@ -24,8 +24,8 @@ public class TransactionImpl implements Transaction {
     @Transactional
     public Account simpanUang(Deposit deposit) {
 
-        Integer norek = deposit.getNorek();
-        Account acc = accountDao.selectAccountByNorek(norek);
+        Integer account_Number = deposit.getAccount_Number();
+        Account acc = accountDao.selectAccountByAccount_Number(account_Number);
         acc.setBalance(acc.getBalance() + deposit.getAmount());
         accountDao.updateAccount(acc);
 
@@ -33,8 +33,8 @@ public class TransactionImpl implements Transaction {
         createHistory.setHid(historyDao.countHistory() + 1);
         createHistory.setActivity("Deposit");
         createHistory.setAmount(deposit.getAmount());
-        createHistory.setNorek(norek);
-        createHistory.setTipe(acc.getTipe());
+        createHistory.setNorek(account_Number);
+        createHistory.setTipe(acc.getType());
 
         historyDao.insertHistory(createHistory);
 
@@ -44,8 +44,8 @@ public class TransactionImpl implements Transaction {
     @Transactional
     public Account ambilUang(Withdraw withdraw) {
 
-        Integer norek = withdraw.getNorek();
-        Account acc = accountDao.selectAccountByNorek(norek);
+        Integer norek = withdraw.getAccount_Number();
+        Account acc = accountDao.selectAccountByAccount_Number(norek);
         acc.setBalance(acc.getBalance() - withdraw.getAmount());
         accountDao.updateAccount(acc);
 
@@ -54,7 +54,7 @@ public class TransactionImpl implements Transaction {
         createHistory.setActivity("Withdraw");
         createHistory.setAmount(withdraw.getAmount());
         createHistory.setNorek(norek);
-        createHistory.setTipe(acc.getTipe());
+        createHistory.setTipe(acc.getType());
 
         historyDao.insertHistory(createHistory);
 
@@ -64,11 +64,11 @@ public class TransactionImpl implements Transaction {
     @Transactional
     public Account kirimUang(Transfer transfer) {
 
-        Integer norek1 = transfer.getNorek();
-        Account acc1 = accountDao.selectAccountByNorek(norek1);
+        Integer norek1 = transfer.getAccount_Number();
+        Account acc1 = accountDao.selectAccountByAccount_Number(norek1);
 
         Integer norek2 = transfer.getRekTujuan();
-        Account acc2 = accountDao.selectAccountByNorek(norek2);
+        Account acc2 = accountDao.selectAccountByAccount_Number(norek2);
 
         if (acc1.getBalance() >= transfer.getAmount() && acc1.getBalance() >= 50000) {
 
@@ -87,7 +87,7 @@ public class TransactionImpl implements Transaction {
         createHistory.setActivity("Transfer");
         createHistory.setAmount(transfer.getAmount());
         createHistory.setNorek(norek1);
-        createHistory.setTipe(acc1.getTipe());
+        createHistory.setTipe(acc1.getType());
         createHistory.setRekTujuan(norek2);
 
         historyDao.insertHistory(createHistory);

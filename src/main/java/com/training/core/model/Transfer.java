@@ -4,8 +4,8 @@ import com.training.core.domain.Account;
 
 public class Transfer {
     private Integer cid;
-    private String tipe;
-    private Integer norek;
+    private String type;
+    private Integer account_Number;
     private String nama;
     private Integer amount;
     private Integer rekTujuan;
@@ -24,12 +24,12 @@ public class Transfer {
         this.nama = nama;
     }
 
-    public Integer getNorek() {
-        return norek;
+    public Integer getAccount_Number() {
+        return account_Number;
     }
 
-    public void setNorek(Integer norek) {
-        this.norek = norek;
+    public void setAccount_Number(Integer norek) {
+        this.account_Number = norek;
     }
 
     public String getNamaTujuan() {
@@ -64,12 +64,12 @@ public class Transfer {
         this.cid = cid;
     }
 
-    public String getTipe() {
-        return tipe;
+    public String getType() {
+        return type;
     }
 
-    public void setTipe(String tipe) {
-        this.tipe = tipe;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Integer getAmount() {

@@ -13,14 +13,14 @@
         <property name="name" type="string">
             <column name="NAME" length="255" not-null="true" />
         </property>
-        <property name="tipe" type="string">
-            <column name="TIPE" length="255" not-null="true"/>
+        <property name="type" type="string">
+            <column name="TYPE" length="255" not-null="true"/>
         </property>
         <property name="balance" type="integer">
             <column name="BALANCE" precision="255" not-null="true"/>
         </property>
-        <property name="norek" type="integer">
-            <column name="NOREK" precision="10" not-null="true"/>
+        <property name="account_Number" type="integer">
+            <column name="ACCOUNT_NUMBER" precision="10" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping> 

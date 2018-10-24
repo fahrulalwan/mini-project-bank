@@ -3,14 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( "#datepicker" ).datepicker();
-        } );
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <%@include file="../layout/meta.jsp" %>
 </head>
 <body>
@@ -33,7 +27,7 @@
                     </tr>
                     <tr>
                         <td><form:label path="id_Number">Identity Number</form:label></td>
-                        <td><form:input path="id_Number"/></td>
+                        <td><form:input minlength="10" maxlength="10" path="id_Number"/></td>
                     </tr>
                     <tr>
                         <td><form:label path="mother_Name">Mother Name</form:label></td>
@@ -45,7 +39,7 @@
                     </tr>
                     <tr>
                         <td><form:label path="birth_Date">Birth_Date</form:label></td>
-                        <td><form:input path="birth_Date"/></td>
+                        <td><form:input type="date" width="276"  path="birth_Date"/></td>
                     </tr>
                     <tr>
                         <td colspan="2"><input type="submit" value="Submit"/></td>
@@ -58,7 +52,6 @@
     </div>
 
 </div>
-
 </body>
 <%@ include file="../layout/footer.jsp" %>
 </html>

@@ -22,19 +22,19 @@
                     </tr>
                     <tr>
                         <td>Identity Number</td>
-                        <td>??????????</td>
+                        <td>${costumer.id_Number}</td>
                     </tr>
                     <tr>
                         <td>Mother Name</td>
-                        <td>???????</td>
+                        <td>${costumer.mother_Name}</td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td>${costumer.alamat}</td>
+                        <td>${costumer.address}</td>
                     </tr>
                     <tr>
                         <td>Birth Date</td>
-                        <td>${costumer.ttl}</td>
+                        <td>${costumer.birth_Date}</td>
                     </tr>
 
                 </table>
@@ -59,7 +59,7 @@
                     <c:forEach var="account" items="${costumer.daftaracc}">
                         <tr>
                             <td>Type</td>
-                            <td>${account.tipe}</td>
+                            <td>${account.type}</td>
                         </tr>
                         <tr>
                             <td>Balance</td>
@@ -67,7 +67,7 @@
                         </tr>
                         <tr>
                             <td>Account Number</td>
-                            <td>${account.norek}</td>
+                            <td>${account.account_Number}</td>
                         </tr>
                         <tr>
                             <td>--------------------------</td>
@@ -81,7 +81,7 @@
                         Pilih Rekening : &nbsp;
                         <label for="list"><select id="list" name="accountlist">
                             <c:forEach items="${costumer.daftaracc}" var="account">
-                                <option id="a" value="${account.norek}">${account.norek}</option>
+                                <option id="a" value="${account.account_Number}">${account.account_Number}</option>
                             </c:forEach>
                         </select>
                         </label>

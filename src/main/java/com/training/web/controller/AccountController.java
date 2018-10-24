@@ -1,7 +1,6 @@
 package com.training.web.controller;
 
 import com.training.core.domain.Account;
-import com.training.core.domain.Costumer;
 import com.training.core.model.Deposit;
 import com.training.core.model.Transfer;
 import com.training.core.model.Withdraw;
@@ -10,7 +9,10 @@ import com.training.core.service.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -37,14 +39,14 @@ public class AccountController {
 	public ModelAndView addAccount(@ModelAttribute("account") Account account,
 			ModelMap model) {
 		accountService.insertAccount(account);
-		return new ModelAndView("account/account_result", "command", new Account()); 
+		return new ModelAndView("account/account_result", "command", new Account());
 	}
 
 
-	@RequestMapping(value = "/formDeposit/{norek}", method = RequestMethod.GET)
-	public ModelAndView formDeposit(@PathVariable("norek") int norekening) {
+	@RequestMapping(value = "/formDeposit/{account_Number}", method = RequestMethod.GET)
+	public ModelAndView formDeposit(@PathVariable("account_Number") int account_Number) {
 		Deposit d =  new Deposit();
-		d.setNorek(norekening);
+		d.setAccount_Number(account_Number);
 		return new ModelAndView("account/account_deposit", "command", d);
 	}
 
@@ -55,10 +57,10 @@ public class AccountController {
 		return new ModelAndView("account/result_deposit", "simpen", simpen);
 	}
 
-	@RequestMapping(value = "/formWithdraw/{norek}", method = RequestMethod.GET)
-	public ModelAndView formWithdraw(@PathVariable("norek") int norekening) {
+	@RequestMapping(value = "/formWithdraw/{account_Number}", method = RequestMethod.GET)
+	public ModelAndView formWithdraw(@PathVariable("account_Number") int account_Number) {
 		Withdraw w = new Withdraw();
-		w.setNorek(norekening);
+		w.setAccount_Number(account_Number);
 		return new ModelAndView("account/account_withdraw", "command", w);
 	}
 
@@ -69,10 +71,10 @@ public class AccountController {
 		return new ModelAndView("account/result_withdraw", "tarik", tarik);
 	}
 
-	@RequestMapping(value = "/formTransfer/{norek}", method = RequestMethod.GET)
-	public ModelAndView formTransfer(@PathVariable("norek") int norekening) {
+	@RequestMapping(value = "/formTransfer/{account_Number}", method = RequestMethod.GET)
+	public ModelAndView formTransfer(@PathVariable("account_Number") int account_Number) {
 		Transfer t = new Transfer();
-		t.setNorek(norekening);
+		t.setAccount_Number(account_Number);
 		return new ModelAndView("account/account_transfer", "command", t);
 	}
 

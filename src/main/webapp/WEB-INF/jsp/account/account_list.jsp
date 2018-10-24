@@ -31,8 +31,8 @@
                             <tr>
                                 <td><c:out value="${account.name}"/></td>
                                 <td><c:out value="${account.account_Number}"/></td>
-                                <td><c:out value="${account.tipe}"/></td>
-                                <td><button onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${account.cid}'"/>Visit</button></td>
+                                <td><c:out value="${account.type}"/></td>
+                                <td><button onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${account.cid}'"/>Visit</td>
 
                             </tr>
                         </c:forEach>

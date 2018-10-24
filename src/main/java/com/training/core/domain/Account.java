@@ -2,92 +2,92 @@
 
 import java.io.Serializable;
 
-public class Account implements Serializable {
+    public class Account implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    private Integer id;
-    private Integer cid;
-    private String name;
-    private String tipe;
-    private Integer balance;
-    private Integer norek;
-
-   
-
-    public Integer getId() {
-		return id;
-	}
+        private static final long serialVersionUID = 1L;
+        private Integer id;
+        private Integer cid;
+        private String name;
+        private String type;
+        private Integer balance;
+        private Integer account_Number;
 
 
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+        public Integer getId() {
+            return id;
+        }
 
 
 
-	public Integer getCid() {
-		return cid;
-	}
+        public void setId(Integer id) {
+            this.id = id;
+        }
 
 
 
-	public void setCid(Integer cid) {
-		this.cid = cid;
-	}
+        public Integer getCid() {
+            return cid;
+        }
 
 
 
-	public String getName() {
-		return name;
-	}
+        public void setCid(Integer cid) {
+            this.cid = cid;
+        }
 
 
 
-	public void setName(String name) {
-		this.name = name;
-	}
+        public String getName() {
+            return name;
+        }
 
 
 
-	public String getTipe() {
-		return tipe;
-	}
+        public void setName(String name) {
+            this.name = name;
+        }
 
 
 
-	public void setTipe(String tipe) {
-		this.tipe = tipe;
-	}
+        public String getType() {
+            return type;
+        }
 
 
 
-	public Integer getBalance() {
-		return balance;
-	}
+        public void setType(String type) {
+            this.type = type;
+        }
 
 
 
-	public void setBalance(Integer balance) {
-		this.balance = balance;
-	}
+        public Integer getBalance() {
+            return balance;
+        }
 
 
 
-	public Integer getNorek() {
-		return norek;
-	}
+        public void setBalance(Integer balance) {
+            this.balance = balance;
+        }
 
 
 
-	public void setNorek(Integer norek) {
-		this.norek = norek;
-	}
+        public Integer getAccount_Number() {
+            return account_Number;
+        }
 
 
 
-	@Override
-    public String toString() {
-        return "Account[Name=" + getName() + ", Type=" + getTipe() + ", NoRek=" + getNorek() + ", Balance=" + getBalance() + "]";
+        public void setAccount_Number(Integer account_Number) {
+            this.account_Number = account_Number;
+        }
+
+
+
+        @Override
+        public String toString() {
+            return "Account[Name=" + getName() + ", Type=" + getType() + ", Account_Number=" + getAccount_Number() + ", Balance=" + getBalance() + "]";
+        }
     }
-}

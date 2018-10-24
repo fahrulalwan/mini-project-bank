@@ -8,17 +8,17 @@ public class Deposit {
     private Integer cid;
     private String tipe;
     private Integer amount;
-    private Integer norek;
-    private String nama;
+    private Integer account_Number;
+    private String name;
     private Collection<Account> colAccount;
 
 
     public String getNama() {
-        return nama;
+        return name;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setNama(String name) {
+        this.name = name;
     }
 
     public Collection<Account> getColAccount() {
@@ -31,12 +31,12 @@ public class Deposit {
 
     private Account account;
 
-    public Integer getNorek() {
-        return norek;
+    public Integer getAccount_Number() {
+        return account_Number;
     }
 
-    public void setNorek(Integer norek) {
-        this.norek = norek;
+    public void setAccount_Number(Integer account_Number) {
+        this.account_Number = account_Number;
     }
 
     public Account getAccount() {

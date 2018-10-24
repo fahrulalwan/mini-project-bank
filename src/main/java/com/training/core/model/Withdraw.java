@@ -6,7 +6,7 @@ public class Withdraw {
     private Integer cid;
     private String tipe;
     private Integer amount;
-    private Integer norek;
+    private Integer account_Number;
     private String nama;
     private Account account;
 
@@ -19,12 +19,12 @@ public class Withdraw {
         this.nama = nama;
     }
 
-    public Integer getNorek() {
-        return norek;
+    public Integer getAccount_Number() {
+        return account_Number;
     }
 
-    public void setNorek(Integer norek) {
-        this.norek = norek;
+    public void setAccount_Number(Integer account_Number) {
+        this.account_Number = account_Number;
     }
 
     public Account getAccount() {

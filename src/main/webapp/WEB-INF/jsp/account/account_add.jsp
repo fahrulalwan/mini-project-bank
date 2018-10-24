@@ -29,8 +29,8 @@
                             <td><form:input path="name"/></td>
                         </tr>
                         <tr>
-                            <td><form:label path="tipe">Type</form:label></td>
-                            <td><form:input path="tipe"/></td>
+                            <td><form:label path="type">Type</form:label></td>
+                            <td><form:input path="type"/></td>
                         </tr>
                         <tr>
                             <td><form:label path="account_Number">Account Number</form:label></td>
@@ -51,12 +51,12 @@
         <script>
             function validateform() {
                 var cid = document.add.cid.value;
-                var account_Number = document.add.account_Number.value;
+                var id_Number = document.add.account_Number.value;
 
                 if (cid == null || cid === ""){
                     alert("Costumer id Can't Be Blank");
                     return false;
-                }else if(account_Number == null || account_Number === ""){
+                } else if(id_Number == null || id_Number === ""){
                     alert("Please input Account Number");
                     return false;
                 }

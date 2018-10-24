@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@include file="../layout/meta.jsp"%>
+    <%@include file="../layout/meta.jsp"%>
 </head>
 <body>
 <%@include file="../layout/navbar.jsp"%>

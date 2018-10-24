@@ -23,19 +23,19 @@
                     </tr>
                     <tr>
                         <td>Identity Number</td>
-                        <td>????????</td>
+                        <td>${costumer.id_Number}</td>
                     </tr>
                     <tr>
                         <td>Mother Name</td>
-                        <td>????????</td>
+                        <td>${costumer.mother_Name}</td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td>${costumer.alamat}</td>
+                        <td>${costumer.address}</td>
                     </tr>
                     <tr>
                         <td>Birth Date</td>
-                        <td>${costumer.ttl}</td>
+                        <td>${costumer.birth_Date}</td>
                     </tr>
                 </table>
             </div>

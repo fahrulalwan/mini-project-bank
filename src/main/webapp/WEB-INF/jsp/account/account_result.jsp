@@ -22,11 +22,11 @@
                         <td>${account.name}</td>
                     <tr>
                         <td>Type</td>
-                        <td>${account.tipe}</td>
+                        <td>${account.type}</td>
                     </tr>
                     <tr>
                         <td>Account Number</td>
-                        <td>${account.norek}</td>
+                        <td>${account.account_Number}</td>
                     </tr>
                     <tr>
                         <td>Balance</td>
