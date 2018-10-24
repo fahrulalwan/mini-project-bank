@@ -1,19 +1,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/default.css" />" rel="stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>BankApp</title>
+    <%@include file="../layout/meta.jsp" %>
 </head>
 <body>
+<%@include file="../layout/navbar.jsp" %>
 
 <div class="container-fluid">
     <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file="../layout/menubar.jsp" %>
         <div id="main">
 
             <div class="row">
@@ -24,21 +21,18 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>Account ID</th>
                             <th>Name</th>
-                            <th>No Rekening</th>
-                            <th>Tipe Rekening</th>
+                            <th>Account Number</th>
+                            <th>Type</th>
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach var="account" items="${list}">
                             <tr>
-
-                                <td><a href="/miniapp/costumer/view?id=${account.cid}">
-                                    <c:out value="${account.id}"/></a></td>
                                 <td><c:out value="${account.name}"/></td>
-                                <td><c:out value="${account.norek}"/></td>
+                                <td><c:out value="${account.account_Number}"/></td>
                                 <td><c:out value="${account.tipe}"/></td>
+                                <td><button onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${account.cid}'"/>Visit</button></td>
 
                             </tr>
                         </c:forEach>
@@ -49,9 +43,9 @@
         </div>
 
     </div>
-    <%@ include file="../layout/footer.jsp" %>
 </div>
 
 </body>
+<%@ include file="../layout/footer.jsp" %>
 </html>
 

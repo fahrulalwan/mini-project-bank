@@ -2,18 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/default.css" />" rel="stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>BankApp</title>
+    <%@include file="../layout/meta.jsp"%>
 </head>
 <body>
+<%@include file="../layout/navbar.jsp"%>
 
 <div class="container-fluid">
     <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file="../layout/menubar.jsp" %>
         <div id="main">
             <div class="row">
                 <div class="col-sm-1"></div>
@@ -25,17 +21,21 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Alamat</th>
-                            <th>TTL</th>
+                            <th>Identity Number</th>
+                            <th>Mother Name</th>
+                            <th>Address</th>
+                            <th>Birth Date</th>
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach var="costumer" items="${list}">
                             <tr>
 
-                                <td><a href="/miniapp/costumer/view?id=${costumer.id}">
+                                <td><a href="http://localhost:8080/miniapp/costumer/view?id=${costumer.id}">
                                     <c:out value="${costumer.id}"/></a></td>
                                 <td><c:out value="${costumer.name}"/></td>
+                                <td><c:out value="${costumer.name}?????"/></td>
+                                <td><c:out value="${costumer.name}?????"/></td>
                                 <td><c:out value="${costumer.alamat}"/></td>
                                 <td><c:out value="${costumer.ttl}"/></td>
 
@@ -48,9 +48,9 @@
         </div>
 
     </div>
-    <%@ include file="../layout/footer.jsp" %>
 </div>
 
 </body>
+<%@ include file="../layout/footer.jsp" %>
 </html>
 

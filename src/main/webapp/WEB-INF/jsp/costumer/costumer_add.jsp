@@ -3,18 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/default.css" />" rel="stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>BankApp</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
+    <%@include file="../layout/meta.jsp" %>
 </head>
 <body>
+<%@include file="../layout/navbar.jsp" %>
 
 <div class="container-fluid">
     <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file="../layout/menubar.jsp" %>
 
         <div id="main" class="row">
             <div class="col-sm-1"></div>
@@ -24,20 +28,24 @@
                 <form:form method="POST" action="/miniapp/costumer/add">
                 <table class="table table-hover">
                     <tr>
-                        <td><form:label path="id">id</form:label></td>
-                        <td><form:input path="id"/></td>
-                    </tr>
-                    <tr>
                         <td><form:label path="name">Name</form:label></td>
                         <td><form:input path="name"/></td>
                     </tr>
                     <tr>
-                        <td><form:label path="alamat">Alamat</form:label></td>
-                        <td><form:input path="alamat"/></td>
+                        <td><form:label path="id_Number">Identity Number</form:label></td>
+                        <td><form:input path="id_Number"/></td>
                     </tr>
                     <tr>
-                        <td><form:label path="ttl">TTL</form:label></td>
-                        <td><form:input path="ttl"/></td>
+                        <td><form:label path="mother_Name">Mother Name</form:label></td>
+                        <td><form:input path="mother_Name"/></td>
+                    </tr>
+                    <tr>
+                        <td><form:label path="address">Address</form:label></td>
+                        <td><form:input path="address"/></td>
+                    </tr>
+                    <tr>
+                        <td><form:label path="birth_Date">Birth_Date</form:label></td>
+                        <td><form:input path="birth_Date"/></td>
                     </tr>
                     <tr>
                         <td colspan="2"><input type="submit" value="Submit"/></td>
@@ -47,10 +55,10 @@
             </form:form>
 
         </div>
-        <%@ include file="../layout/footer.jsp" %>
     </div>
 
 </div>
 
 </body>
+<%@ include file="../layout/footer.jsp" %>
 </html>

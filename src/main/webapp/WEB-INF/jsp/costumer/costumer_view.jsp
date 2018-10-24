@@ -3,37 +3,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/default.css" />" rel="stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>BankApp</title>
+    <%@include file="../layout/meta.jsp" %>
 </head>
 <body>
+<%@include file="../layout/navbar.jsp" %>
 
 <div class="container-fluid">
     <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file="../layout/menubar.jsp" %>
 
         <div id="main" class="row">
             <div class="col-sm-4">
                 <h2>Costumer Information</h2>
                 <table class="table table-hover">
                     <tr>
-                        <td>ID</td>
-                        <td>${costumer.id}</td>
-                    </tr>
-                    <tr>
                         <td>Name</td>
                         <td>${costumer.name}</td>
                     </tr>
                     <tr>
-                        <td>Alamat</td>
+                        <td>Identity Number</td>
+                        <td>??????????</td>
+                    </tr>
+                    <tr>
+                        <td>Mother Name</td>
+                        <td>???????</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
                         <td>${costumer.alamat}</td>
                     </tr>
                     <tr>
-                        <td>TTL</td>
+                        <td>Birth Date</td>
                         <td>${costumer.ttl}</td>
                     </tr>
 
@@ -45,7 +45,7 @@
 
                         <input type="submit" value="Delete"/>
                         <input type="button" value="addAccount"
-                        		onclick="document.location='/miniapp/account/form_add?id=${costumer.id}'"/>
+                               onclick="document.location='/miniapp/account/form_add?id=${costumer.id}'"/>
 
                     </form:form>
                 </div>
@@ -54,7 +54,7 @@
             <div class="col-sm-2"></div>
 
             <div class="col-sm-4">
-                <h2>Daftar Account</h2>
+                <h2>Accounts</h2>
                 <table class="table table-hover">
                     <c:forEach var="account" items="${costumer.daftaracc}">
                         <tr>
@@ -66,7 +66,7 @@
                             <td>Rp. ${account.balance},-</td>
                         </tr>
                         <tr>
-                            <td>Nomor Rekening</td>
+                            <td>Account Number</td>
                             <td>${account.norek}</td>
                         </tr>
                         <tr>
@@ -79,11 +79,12 @@
                 <div align="center">
                     <form>
                         Pilih Rekening : &nbsp;
-                        <select id="list" name="accountlist">
+                        <label for="list"><select id="list" name="accountlist">
                             <c:forEach items="${costumer.daftaracc}" var="account">
                                 <option id="a" value="${account.norek}">${account.norek}</option>
                             </c:forEach>
                         </select>
+                        </label>
 
                         <br><br>
 
@@ -93,30 +94,34 @@
                                onclick="withdraw()"/>
                         <input type="button" value="Transfer"
                                onclick="transfer()"/>
-                        
-                </div>
-                </form>
-            </div>
 
+                    </form>
+                </div>
+            </div>
         </div>
-        <%@ include file="../layout/footer.jsp" %>
+
     </div>
+</div>
+</body>
+<%@ include file="../layout/footer.jsp" %>
+
 <script>
     function deposit() {
         var e = document.getElementById("list");
         var strUser = e.options[e.selectedIndex].value;
-        document.location.href = "/miniapp/account/formDeposit/"+strUser;
+        document.location.href = "/miniapp/account/formDeposit/" + strUser;
     }
+
     function withdraw() {
         var e = document.getElementById("list");
         var strUser = e.options[e.selectedIndex].value;
-        document.location.href = "/miniapp/account/formWithdraw/"+strUser;
+        document.location.href = "/miniapp/account/formWithdraw/" + strUser;
     }
+
     function transfer() {
         var e = document.getElementById("list");
         var strUser = e.options[e.selectedIndex].value;
-        document.location.href = "/miniapp/account/formTransfer/"+strUser;
+        document.location.href = "/miniapp/account/formTransfer/" + strUser;
     }
 </script>
-</body>
 </html>

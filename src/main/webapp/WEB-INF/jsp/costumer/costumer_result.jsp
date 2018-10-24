@@ -3,18 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/default.css" />" rel="stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>BankApp</title>
+    <%@include file="../layout/meta.jsp"%>
 </head>
 <body>
+<%@include file="../layout/navbar.jsp"%>
 
 <div class="container-fluid">
     <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file="../layout/menubar.jsp" %>
 
         <div id="main" class="row">
             <div class="col-sm-1"></div>
@@ -22,19 +18,23 @@
                 <h2>Costumer Information</h2>
                 <table class="table table-hover">
                     <tr>
-                        <td>ID</td>
-                        <td>${costumer.id}</td>
-                    </tr>
-                    <tr>
                         <td>Name</td>
                         <td>${costumer.name}</td>
                     </tr>
                     <tr>
-                        <td>Alamat</td>
+                        <td>Identity Number</td>
+                        <td>????????</td>
+                    </tr>
+                    <tr>
+                        <td>Mother Name</td>
+                        <td>????????</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
                         <td>${costumer.alamat}</td>
                     </tr>
                     <tr>
-                        <td>TTL</td>
+                        <td>Birth Date</td>
                         <td>${costumer.ttl}</td>
                     </tr>
                 </table>
@@ -42,8 +42,8 @@
         </div>
 
     </div>
-    <%@ include file="../layout/footer.jsp" %>
 </div>
 
 </body>
+<%@ include file="../layout/footer.jsp" %>
 </html>

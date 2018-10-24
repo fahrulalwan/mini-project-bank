@@ -2,24 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="<c:url value="/resources/theme1/css/default.css" />" rel="stylesheet" type="text/css"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>BankApp</title>
+    <%@include file="layout/meta.jsp" %>
 </head>
 <body>
 
+<%@include file="layout/navbar.jsp" %>
+
 <div class="container-fluid">
-  <%@ include file = "layout/header.jsp" %>
 
-  <div class="wrapper">
-	<%@ include file = "layout/menubar.jsp" %>
-  </div>
+    <%@ include file="layout/header.jsp" %>
 
-  <%@ include file = "layout/footer.jsp" %>
 </div>
-
 </body>
+<%@ include file="layout/footer.jsp" %>
 </html>
 

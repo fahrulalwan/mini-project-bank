@@ -3,24 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/default.css" />" rel="stylesheet"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <title>BankApp</title>
+    <%@include file="../layout/meta.jsp" %>
 </head>
 <body>
+<%@include file="../layout/navbar.jsp" %>
 
 <div class="container-fluid">
     <%@ include file="../layout/header.jsp" %>
     <div class="wrapper">
-        <%@ include file="../layout/menubar.jsp" %>
 
         <div id="main" class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
                 <h2>Add an Account</h2>
-                <form:form method="POST" action="/miniapp/account/add">
+                <form:form name="add" method="POST" action="/miniapp/account/add"
+                           onsubmit="return validateform()">
                     <table class="table table-hover">
 
                         <tr>
@@ -36,8 +33,8 @@
                             <td><form:input path="tipe"/></td>
                         </tr>
                         <tr>
-                            <td><form:label path="norek">No Rekening</form:label></td>
-                            <td><form:input path="norek"/></td>
+                            <td><form:label path="account_Number">Account Number</form:label></td>
+                            <td><form:input minlength="10" maxlength="10" path="account_Number"/></td>
                         </tr>
                         <tr>
                             <td><form:label path="balance">Balance</form:label></td>
@@ -50,8 +47,22 @@
                 </form:form>
             </div>
         </div>
-        <%@ include file="../layout/footer.jsp" %>
     </div>
+        <script>
+            function validateform() {
+                var cid = document.add.cid.value;
+                var account_Number = document.add.account_Number.value;
 
+                if (cid == null || cid === ""){
+                    alert("Costumer id Can't Be Blank");
+                    return false;
+                }else if(account_Number == null || account_Number === ""){
+                    alert("Please input Account Number");
+                    return false;
+                }
+            }
+        </script>
 </body>
+<%@ include file="../layout/footer.jsp" %>
+
 </html>
