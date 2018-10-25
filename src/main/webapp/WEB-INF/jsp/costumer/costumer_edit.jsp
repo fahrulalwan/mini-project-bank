@@ -9,7 +9,7 @@
 <%@include file="../layout/navbar.jsp" %>
 
 <div class="container-fluid">
-    <%@ include file="../layout/header.jsp" %>
+
     <div class="wrapper">
 
         <div id="main">

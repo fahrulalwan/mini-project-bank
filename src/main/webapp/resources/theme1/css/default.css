@@ -1,14 +1,10 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
-    font-family: inherit;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 26px;
     background-color: #e2d4cd;
 
-}
-
-.container {
-    min-width: 900px;
 }
 
 .wrapper {
@@ -46,23 +42,10 @@ a:hover {
     text-decoration: #4CAF50;
 }
 
-@media (max-width: 800px) {
-    #main {
-        margin-right: 0;
-    }
-
-}
-
-@media (max-width: 600px) {
-    #main {
-        margin: 0;
-    }
-}
-
 /*NAVBAR*/
 
 .navbar {
-    background: #222222;
+    background: #36384C;
 }
 
 .nav-item::after {
@@ -83,8 +66,8 @@ a:hover {
 }
 
 .nav-link {
-    padding: 7px 100px;
-    transition: 0.2s;
+    padding: 3px;
+    transition: 0.15s;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -95,10 +78,11 @@ a:hover {
     background: #E9DCCD;
 }
 
-                /* Footer */
+
+/* Footer */
 
 section {
-    padding: 60px 0;
+    padding: 20px 0;
 }
 
 section .section-title {
@@ -109,19 +93,14 @@ section .section-title {
 }
 
 #footer {
-    background: #3f3931 !important;
-}
-
-#footer h5 {
-    padding-left: 10px;
-    border-left: 3px solid #eeeeee;
-    padding-bottom: 6px;
-    margin-bottom: 20px;
-    color: #ffffff;
+    background: #36384C !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #E9DCCD;
 }
 
 #footer a {
-    color: #ffffff;
+    color: #E9DCCD;
     text-decoration: none !important;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -133,24 +112,24 @@ section .section-title {
 
 #footer ul.social li a i {
     margin-right: 5px;
-    font-size: 25px;
+    font-size: 30px;
     -webkit-transition: .5s all ease;
     -moz-transition: .5s all ease;
     transition: .5s all ease;
 }
 
 #footer ul.social li:hover a i {
-    font-size: 30px;
+    font-size: 35px;
     margin-top: -10px;
 }
 
 #footer ul.social li a,
 #footer ul.quick-links li a {
-    color: #ffffff;
+    color: #E9DCCD;
 }
 
 #footer ul.social li a:hover {
-    color: #eeeeee;
+    color: #E9DCCD;
 }
 
 #footer ul.quick-links li {
@@ -181,4 +160,8 @@ section .section-title {
         padding-bottom: 0px;
         margin-bottom: 10px;
     }
+}
+
+p, .h6, h2 {
+    color: #E9DCCD;
 }

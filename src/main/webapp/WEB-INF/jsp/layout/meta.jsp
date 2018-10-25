@@ -17,4 +17,11 @@
         crossorigin="anonymous"></script>
 
         <link href="<c:url value="/resources/css/default.css"/>" rel="stylesheet" type="text/css"/>
+        <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet" type="text/css"/>
+        <link href="<c:url value="/resources/css/util.css"/>" rel="stylesheet" type="text/css"/>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bttn.css/0.2.4/bttn.min.css" rel="stylesheet" type="text/css"/>
+
         <title>BankApp</title>
+
+        <link rel="icon" type="image/jpg" href="<c:url value="/jsp/dog.jpg"/>"/>

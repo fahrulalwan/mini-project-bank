@@ -19,4 +19,6 @@ public class HistoryController {
         return new ModelAndView("history/history", "list", historyService.getHistory());
     }
 
+
+
 }

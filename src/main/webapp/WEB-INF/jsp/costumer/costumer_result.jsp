@@ -3,47 +3,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%@include file="../layout/meta.jsp"%>
+    <%@include file="../layout/meta.jsp" %>
 </head>
 <body>
-<%@include file="../layout/navbar.jsp"%>
+<%@include file="../layout/navbar.jsp" %>
 
-<div class="container-fluid">
-    <%@ include file="../layout/header.jsp" %>
-    <div class="wrapper">
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <h2 class="column1">Account Information</h2>
 
-        <div id="main" class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5">
-                <h2>Costumer Information</h2>
-                <table class="table table-hover">
-                    <tr>
-                        <td>Name</td>
+                <br>
+
+                <table>
+                    <tr class="table100-head">
+                        <th class="column1" style="color: black; padding-right: 50px">Name</th>
                         <td>${costumer.name}</td>
                     </tr>
-                    <tr>
-                        <td>Identity Number</td>
+                    <tr class="table100-head">
+                        <th class="column1" style="color: black; padding-right: 50px">Identity Number</th>
                         <td>${costumer.id_Number}</td>
                     </tr>
-                    <tr>
-                        <td>Mother Name</td>
+                    <tr class="table100-head">
+                        <th class="column1" style="color: black; padding-right: 50px">Mother Name</th>
                         <td>${costumer.mother_Name}</td>
                     </tr>
-                    <tr>
-                        <td>Address</td>
+                    <tr class="table100-head">
+                        <th class="column1" style="color: black; padding-right: 50px">Address</th>
                         <td>${costumer.address}</td>
                     </tr>
-                    <tr>
-                        <td>Birth Date</td>
+                    <tr class="table100-head">
+                        <th class="column1" style="color: black; padding-right: 50px">Birth Date</th>
                         <td>${costumer.birth_Date}</td>
                     </tr>
                 </table>
             </div>
         </div>
-
     </div>
 </div>
-
 </body>
 <%@ include file="../layout/footer.jsp" %>
 </html>

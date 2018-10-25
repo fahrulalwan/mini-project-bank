@@ -8,7 +8,8 @@
         <ul class="navbar-nav">
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navdrop" role="button" data-toggle="dropdown" data-hover="dropdown">Customer</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navdrop" role="button" data-toggle="dropdown"
+        data-hover="dropdown">Customer</a>
         <div class="dropdown-menu" aria-labelledby="navdrop">
 
         <a href="http://localhost:8080/miniapp/costumer/list" class="dropdown-item">Costumer List</a>
@@ -24,8 +25,18 @@
         <li class="nav-item">
         <a href="http://localhost:8080/miniapp/history/list" class="nav-link">History</a>
         </li>
+        </ul>
+
+        <img class="mx-auto" src="<c:url value="/jsp/meme_logo.png"/>" alt="9gag" width="45" align="center"/>
+
+        <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+        <a class="nav-link" href="<c:url value="/logout" />" title="Logout ;)">Log Out</a>
+        </li>
 
         </ul>
+
         </div>
         </nav>
 
