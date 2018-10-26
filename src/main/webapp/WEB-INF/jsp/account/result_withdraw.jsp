@@ -22,7 +22,7 @@
                     </tr>
                     <tr>
                         <td>Account Number</td>
-                        <td>${tarik.account_Number}</td>
+                        <td>${tarik.accountNumber}</td>
                     </tr>
                     <tr>
                         <td>Saldo Sebelumnya</td>

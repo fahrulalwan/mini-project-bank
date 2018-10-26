@@ -1,10 +1,12 @@
 package com.training.web.controller;
 
 import com.training.core.domain.Account;
+import com.training.core.domain.Costumer;
 import com.training.core.model.Deposit;
 import com.training.core.model.Transfer;
 import com.training.core.model.Withdraw;
 import com.training.core.service.AccountService;
+import com.training.core.service.CostumerService;
 import com.training.core.service.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,9 @@ public class AccountController {
 	private AccountService accountService;
 
 	@Autowired
+	private CostumerService costumerService;
+
+	@Autowired
 	private Transaction transaction;
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -30,24 +35,30 @@ public class AccountController {
 		return new ModelAndView("account/account_list", "list", accountService.getAccount());
 	}
 	
-	@RequestMapping(value = "/form_add", method = RequestMethod.GET)
-	public ModelAndView formAddAccount() {
-		return new ModelAndView("account/account_add", "command", new Account());
+	@RequestMapping(value = "/form_add/{id}", method = RequestMethod.GET)
+	public ModelAndView formAddAccount(@PathVariable("id") int id) {
+		Costumer cust = costumerService.getCostumer(id);
+		Account acc = new Account();
+
+		if (cust != null) {
+			acc.setCid(cust.getId());
+			acc.setName(cust.getName());
+		}
+		return new ModelAndView("account/account_add", "command", acc);
 	}
-	
+
+	@RequestMapping(value = "/formDeposit/{account_Number}", method = RequestMethod.GET)
+	public ModelAndView formDeposit(@PathVariable("account_Number") int account_Number) {
+		Deposit d =  new Deposit();
+		d.setAccountNumber(account_Number);
+		return new ModelAndView("account/account_deposit", "command", d);
+	}
+
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public ModelAndView addAccount(@ModelAttribute("account") Account account,
 			ModelMap model) {
 		accountService.insertAccount(account);
 		return new ModelAndView("account/account_result", "command", new Account());
-	}
-
-
-	@RequestMapping(value = "/formDeposit/{account_Number}", method = RequestMethod.GET)
-	public ModelAndView formDeposit(@PathVariable("account_Number") int account_Number) {
-		Deposit d =  new Deposit();
-		d.setAccount_Number(account_Number);
-		return new ModelAndView("account/account_deposit", "command", d);
 	}
 
 	@RequestMapping(value = "/addDeposit", method = RequestMethod.POST)
@@ -60,7 +71,7 @@ public class AccountController {
 	@RequestMapping(value = "/formWithdraw/{account_Number}", method = RequestMethod.GET)
 	public ModelAndView formWithdraw(@PathVariable("account_Number") int account_Number) {
 		Withdraw w = new Withdraw();
-		w.setAccount_Number(account_Number);
+		w.setAccountNumber(account_Number);
 		return new ModelAndView("account/account_withdraw", "command", w);
 	}
 
@@ -74,7 +85,7 @@ public class AccountController {
 	@RequestMapping(value = "/formTransfer/{account_Number}", method = RequestMethod.GET)
 	public ModelAndView formTransfer(@PathVariable("account_Number") int account_Number) {
 		Transfer t = new Transfer();
-		t.setAccount_Number(account_Number);
+		t.setAccountNumber(account_Number);
 		return new ModelAndView("account/account_transfer", "command", t);
 	}
 

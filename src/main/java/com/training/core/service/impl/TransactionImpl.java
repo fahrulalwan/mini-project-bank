@@ -24,8 +24,8 @@ public class TransactionImpl implements Transaction {
     @Transactional
     public Account simpanUang(Deposit deposit) {
 
-        Integer account_Number = deposit.getAccount_Number();
-        Account acc = accountDao.selectAccountByAccount_Number(account_Number);
+        Integer accountNumber = deposit.getAccountNumber();
+        Account acc = accountDao.selectAccountByAccountNumber(accountNumber);
         acc.setBalance(acc.getBalance() + deposit.getAmount());
         accountDao.updateAccount(acc);
 
@@ -33,7 +33,7 @@ public class TransactionImpl implements Transaction {
         createHistory.setHid(historyDao.countHistory() + 1);
         createHistory.setActivity("Deposit");
         createHistory.setAmount(deposit.getAmount());
-        createHistory.setNorek(account_Number);
+        createHistory.setNorek(accountNumber);
         createHistory.setTipe(acc.getType());
 
         historyDao.insertHistory(createHistory);
@@ -44,8 +44,8 @@ public class TransactionImpl implements Transaction {
     @Transactional
     public Account ambilUang(Withdraw withdraw) {
 
-        Integer norek = withdraw.getAccount_Number();
-        Account acc = accountDao.selectAccountByAccount_Number(norek);
+        Integer norek = withdraw.getAccountNumber();
+        Account acc = accountDao.selectAccountByAccountNumber(norek);
         acc.setBalance(acc.getBalance() - withdraw.getAmount());
         accountDao.updateAccount(acc);
 
@@ -64,11 +64,11 @@ public class TransactionImpl implements Transaction {
     @Transactional
     public Account kirimUang(Transfer transfer) {
 
-        Integer norek1 = transfer.getAccount_Number();
-        Account acc1 = accountDao.selectAccountByAccount_Number(norek1);
+        Integer norek1 = transfer.getAccountNumber();
+        Account acc1 = accountDao.selectAccountByAccountNumber(norek1);
 
         Integer norek2 = transfer.getRekTujuan();
-        Account acc2 = accountDao.selectAccountByAccount_Number(norek2);
+        Account acc2 = accountDao.selectAccountByAccountNumber(norek2);
 
         if (acc1.getBalance() >= transfer.getAmount() && acc1.getBalance() >= 50000) {
 

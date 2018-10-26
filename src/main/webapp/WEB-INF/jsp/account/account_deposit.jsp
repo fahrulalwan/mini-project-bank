@@ -21,7 +21,7 @@
 
                         <tr>
                             <td>Account Number :</td>
-                            <td><form:input path="account_Number" readonly="true"/></td>
+                            <td><form:input path="accountNumber" readonly="true"/></td>
                         </tr>
 
                         <tr>

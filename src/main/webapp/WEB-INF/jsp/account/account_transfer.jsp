@@ -20,7 +20,7 @@
                 <table class="table table-hover">
                     <tr>
                         <td>Account Number :</td>
-                        <td><form:input readonly="true" path="account_Number"/></td>
+                        <td><form:input readonly="true" path="accountNumber"/></td>
                     </tr>
                     <tr>
                         <td>Amount :</td>

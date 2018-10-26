@@ -13,7 +13,8 @@
     <div class="container-customer">
 
         <div class="col-sm-6">
-            <h2>Costumer Information</h2>
+            <h2 style="padding-left: 37px">Costumer Information</h2>
+            <p id="ilang">${costumer.id}</p>
             <table>
                 <tr class="table100-head">
                     <th class="column1" style="color: black; padding-right: 50px">Name</th>
@@ -40,13 +41,15 @@
             <br>
             <div align="center">
                 <form:form method="POST" action="/miniapp/costumer/delete?id=${costumer.id}">
-                    <input type="button" class="bttn-unite bttn-sm bttn-danger" value="Update"
-                           onclick="document.location='/miniapp/costumer/form_edit?id=${costumer.id}'"/>
-
-                    <input type="submit" class="bttn-unite bttn-sm bttn-danger" value="Delete"/>
-
-                    <input type="button" class="bttn-unite bttn-sm bttn-danger" value="addAccount"
-                           onclick="document.location='/miniapp/account/form_add?id=${costumer.id}'"/>
+                    <button type="button" class="bttn-unite bttn-sm bttn-danger" value="Update"
+                            onclick="document.location='/miniapp/costumer/form_edit?id=${costumer.id}'">Update
+                    </button>
+                    &nbsp;
+                    <button type="submit" class="bttn-unite bttn-sm bttn-danger" value="Delete">Delete</button>
+                    &nbsp;
+                    <button type="button" class="bttn-unite bttn-sm bttn-danger" value="addAccount"
+                            onclick="addAccount(${costumer.id})">Add Account
+                    </button>
 
                 </form:form>
             </div>
@@ -55,7 +58,8 @@
         <div class="col-sm-1"></div>
 
         <div class="col-sm-4">
-            <h2>Accounts</h2>
+            <h2 style="padding-left: 37px">Accounts</h2>
+            <br>
             <table>
                 <c:forEach var="account" items="${costumer.daftaracc}">
                     <tr class="table100-head">
@@ -68,7 +72,7 @@
                     </tr>
                     <tr class="table100-head">
                         <th class="column1" style="color: black; padding-right: 50px">Account Number</th>
-                        <td class="column4">${account.account_Number}</td>
+                        <td class="column4">${account.accountNumber}</td>
                     </tr>
                     <tr>
                         <th class="column1">--------------------------</th>
@@ -82,19 +86,22 @@
                     Pilih Rekening : &nbsp;
                     <label for="list"><select id="list" name="accountlist">
                         <c:forEach items="${costumer.daftaracc}" var="account">
-                            <option id="a" value="${account.account_Number}">${account.account_Number}</option>
+                            <option id="a" value="${account.accountNumber}">${account.accountNumber}</option>
                         </c:forEach>
                     </select>
                     </label>
 
                     <br><br>
 
-                    <input class="bttn-unite bttn-sm bttn-danger" type="button" value="Deposit"
-                           onclick="deposit()"/>
-                    <input class="bttn-unite bttn-sm bttn-danger" type="button" value="Withdraw"
-                           onclick="withdraw()"/>
-                    <input class="bttn-unite bttn-sm bttn-danger" type="button" value="Transfer"
-                           onclick="transfer()"/>
+                    <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Deposit"
+                            onclick="deposit()">Deposit
+                    </button> &nbsp;
+                    <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Withdraw"
+                            onclick="withdraw()">Withdraw
+                    </button> &nbsp;
+                    <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Transfer"
+                            onclick="transfer()">Transfer
+                    </button>
 
                 </form>
             </div>
@@ -106,6 +113,8 @@
 <%@ include file="../layout/footer.jsp" %>
 
 <script>
+    document.getElementById("ilang").style.visibility = "hidden";
+
     function deposit() {
         var e = document.getElementById("list");
         var strUser = e.options[e.selectedIndex].value;
@@ -122,6 +131,10 @@
         var e = document.getElementById("list");
         var strUser = e.options[e.selectedIndex].value;
         document.location.href = "/miniapp/account/formTransfer/" + strUser;
+    }
+
+    function addAccount(accountId) {
+        document.location.href = "/miniapp/account/form_add/" + accountId;
     }
 </script>
 </html>

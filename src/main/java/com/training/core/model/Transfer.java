@@ -5,7 +5,7 @@ import com.training.core.domain.Account;
 public class Transfer {
     private Integer cid;
     private String type;
-    private Integer account_Number;
+    private Integer accountNumber;
     private String nama;
     private Integer amount;
     private Integer rekTujuan;
@@ -24,12 +24,12 @@ public class Transfer {
         this.nama = nama;
     }
 
-    public Integer getAccount_Number() {
-        return account_Number;
+    public Integer getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setAccount_Number(Integer norek) {
-        this.account_Number = norek;
+    public void setAccountNumber(Integer norek) {
+        this.accountNumber = norek;
     }
 
     public String getNamaTujuan() {

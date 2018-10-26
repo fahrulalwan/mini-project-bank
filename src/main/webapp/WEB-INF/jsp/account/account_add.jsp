@@ -17,16 +17,13 @@
                 <div class="col-sm-5">
                     <h2>Add an Account</h2>
                     <form:form id="myForm" method="POST" action="/miniapp/account/add"
-                               onsubmit="return validateform()">
+                               onsubmit="validateform()">
+                        <form:label path="cid" id="ilang">Costumerid</form:label>
+                        <form:input type="hidden" path="cid" id="ilang" readonly="true"/>
                         <table>
-
-                            <tr>
-                                <td><form:label path="cid">Costumerid</form:label></td>
-                                <td><form:input type="number" path="cid"/></td>
-                            </tr>
                             <tr>
                                 <td><form:label path="name">Name</form:label></td>
-                                <td><form:input path="name"/></td>
+                                <td><form:input path="name" readonly="true"/></td>
                             </tr>
                             <tr>
                                 <td><form:label path="type">Type</form:label></td>
@@ -38,16 +35,7 @@
                                     </form:select>
                                 </td>
                             </tr>
-                            <tr>
-                                <td><form:label path="account_Number">Account Number</form:label></td>
-                                <%
-                                    Random rand = new Random();
-                                    int randomnumber = rand.nextInt(900000000) + 10000000;
-                                %>
-                                <td><form:input id="demo" name="ticketid" value="<%=randomnumber%>" readonly="true"
-                                                type="number" minlength="10" maxlength="10" path="account_Number"/></td>
 
-                            </tr>
                             <tr>
                                 <td><form:label path="balance">Balance</form:label></td>
                                 <td><form:input path="balance"/></td>
@@ -65,9 +53,10 @@
     </div>
 </div>
 <script>
+    document.getElementById("ilang").style.visibility = "hidden";
+
     function validateform() {
-        var cid = document.add.cid.value;
-        var id_Number = document.add.account_Number.value;
+        var id_Number = document.add.accountNumber.value;
 
         if (cid == null || cid === "") {
             alert("Costumer id Can't Be Blank");

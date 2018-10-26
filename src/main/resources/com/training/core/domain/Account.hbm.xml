@@ -19,7 +19,7 @@
         <property name="balance" type="integer">
             <column name="BALANCE" precision="255" not-null="true"/>
         </property>
-        <property name="account_Number" type="integer">
+        <property name="accountNumber" type="integer">
             <column name="ACCOUNT_NUMBER" precision="10" not-null="true"/>
         </property>
     </class>

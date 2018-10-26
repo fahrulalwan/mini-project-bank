@@ -7,7 +7,7 @@ import java.util.List;
 public interface AccountDao {
 
     Account selectAccountById(Integer accountId);
-    Account selectAccountByAccount_Number(Integer account_Number);
+    Account selectAccountByAccountNumber(Integer accountNumber);
     List<Account> selectAccount();
     void insertAccount(Account account);
     void deleteAccountById(Integer accountId);

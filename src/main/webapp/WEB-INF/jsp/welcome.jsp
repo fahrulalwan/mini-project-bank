@@ -20,7 +20,7 @@
 <%@ include file="layout/footer.jsp" %>
 <style>
     .container-table100 {
-        width: 100 wh;
+        width: 100%;
         height: 90vh;
         color: #fff;
         background: linear-gradient(-45deg, #E7BAA0, #B2B2A2, #6D7973, #3F3931);
@@ -78,6 +78,7 @@
     }
 </style>
 <script>
+    <%--BAGIAN TEXT--%>
     var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;

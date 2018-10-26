@@ -22,7 +22,7 @@
                     </tr>
                     <tr>
                         <td>Account Number</td>
-                        <td>${simpen.account_Number}</td>
+                        <td>${simpen.accountNumber}</td>
                     </tr>
                     <tr>
                         <td>Saldo Sebelumnya</td>

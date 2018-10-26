@@ -26,7 +26,7 @@
                     </tr>
                     <tr class="table100-head">
                         <th class="column1" style="color: black; padding-right: 50px">Account Number</th>
-                        <td>${account.account_Number}</td>
+                        <td>${account.accountNumber}</td>
                     </tr>
                     <tr class="table100-head">
                         <th class="column1" style="color: black; padding-right: 50px">Balance</th>

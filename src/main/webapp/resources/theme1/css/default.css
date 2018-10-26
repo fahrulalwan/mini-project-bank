@@ -165,3 +165,7 @@ section .section-title {
 p, .h6, h2 {
     color: #E9DCCD;
 }
+
+p {
+    background: url("img/fill.png");
+}

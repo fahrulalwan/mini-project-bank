@@ -8,7 +8,7 @@ public class Deposit {
     private Integer cid;
     private String tipe;
     private Integer amount;
-    private Integer account_Number;
+    private Integer accountNumber;
     private String name;
     private Collection<Account> colAccount;
 
@@ -31,12 +31,12 @@ public class Deposit {
 
     private Account account;
 
-    public Integer getAccount_Number() {
-        return account_Number;
+    public Integer getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setAccount_Number(Integer account_Number) {
-        this.account_Number = account_Number;
+    public void setAccountNumber(Integer accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     public Account getAccount() {

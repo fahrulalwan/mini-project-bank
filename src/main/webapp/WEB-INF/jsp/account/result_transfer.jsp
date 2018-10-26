@@ -22,7 +22,7 @@
                     </tr>
                     <tr>
                         <td>Account Number</td>
-                        <td>${trf.account_Number}</td>
+                        <td>${trf.accountNumber}</td>
                     </tr>
                     <tr>
                         <td>Transfer Amount</td>

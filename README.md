@@ -9,3 +9,7 @@ Banyak fitur yang kurang.
 melengkapi desain jsp
 
 membuat form login dan pengubahan accesibility "permit-all"
+
+view update customer
+
+view result customer dkk.

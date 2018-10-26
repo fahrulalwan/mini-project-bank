@@ -10,7 +10,7 @@ import java.io.Serializable;
         private String name;
         private String type;
         private Integer balance;
-        private Integer account_Number;
+        private Integer accountNumber;
 
 
 
@@ -74,20 +74,20 @@ import java.io.Serializable;
 
 
 
-        public Integer getAccount_Number() {
-            return account_Number;
+        public Integer getAccountNumber() {
+            return accountNumber;
         }
 
 
 
-        public void setAccount_Number(Integer account_Number) {
-            this.account_Number = account_Number;
+        public void setAccountNumber(Integer accountNumber) {
+            this.accountNumber = accountNumber;
         }
 
 
 
         @Override
         public String toString() {
-            return "Account[Name=" + getName() + ", Type=" + getType() + ", Account_Number=" + getAccount_Number() + ", Balance=" + getBalance() + "]";
+            return "Account[Name=" + getName() + ", Type=" + getType() + ", Account_Number=" + getAccountNumber() + ", Balance=" + getBalance() + "]";
         }
     }
