@@ -12,7 +12,7 @@
 
     <div class="container-customer">
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 make-me-sticky">
             <h2 style="padding-left: 37px">Costumer Information</h2>
             <p id="ilang">${costumer.id}</p>
             <table>
@@ -45,7 +45,9 @@
                             onclick="document.location='/miniapp/costumer/form_edit?id=${costumer.id}'">Update
                     </button>
                     &nbsp;
-                    <button type="submit" class="bttn-unite bttn-sm bttn-danger" value="Delete">Delete</button>
+                    <button type="submit" class="bttn-unite bttn-sm bttn-danger" value="Delete"
+                            onclick="confirmDelete()">Delete
+                    </button>
                     &nbsp;
                     <button type="button" class="bttn-unite bttn-sm bttn-danger" value="addAccount"
                             onclick="addAccount(${costumer.id})">Add Account
@@ -55,9 +57,9 @@
             </div>
         </div>
 
-        <div class="col-sm-1"></div>
+        <div class="col-sm-1" style="left: 340px"></div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-4" style="top: -10px; left: 330px">
             <h2 style="padding-left: 37px">Accounts</h2>
             <br>
             <table>
@@ -75,14 +77,14 @@
                         <td class="column4">${account.accountNumber}</td>
                     </tr>
                     <tr>
-                        <th class="column1">--------------------------</th>
-                        <td class="column4">--------------------------</td>
+                        <th></th>
+                        <td></td>
                     </tr>
                 </c:forEach>
             </table>
             <br>
             <div align="center">
-                <form>
+                <form style="color:#E9DCCD;">
                     Pilih Rekening : &nbsp;
                     <label for="list"><select id="list" name="accountlist">
                         <c:forEach items="${costumer.daftaracc}" var="account">
@@ -112,7 +114,7 @@
 </body>
 <%@ include file="../layout/footer.jsp" %>
 
-<script>
+<script type="text/javascript" charset="utf-8">
     document.getElementById("ilang").style.visibility = "hidden";
 
     function deposit() {
@@ -135,6 +137,13 @@
 
     function addAccount(accountId) {
         document.location.href = "/miniapp/account/form_add/" + accountId;
+    }
+
+    function confirmDelete() {
+        var r = confirm("Are you sure want to delete?");          // gabisaaaa :(
+        if (r) {
+            document.location.href = "/miniapp/account/list/";
+        }
     }
 </script>
 </html>

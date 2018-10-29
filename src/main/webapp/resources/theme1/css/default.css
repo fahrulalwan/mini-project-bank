@@ -6,46 +6,32 @@ body {
     background-color: #e2d4cd;
 
 }
-
-.wrapper {
-    position: relative;
-    overflow: auto;
-}
-
-#top, #bottom {
-    border-radius: 4px;
-    margin: 4px;
-}
-
-#top {
-    background-color: #36384C;
-    color: #E9DCCD;
-    padding: 15px;
-}
-
-#main {
-    padding: 10px;
-    margin: 0 210px;
-}
-
-#top h1, #top p {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: #000000;
-    text-decoration: #555555;
-}
-
-a:hover {
-    text-decoration: #4CAF50;
+.make-me-sticky {
+    width: inherit;
+    position: fixed;
+    z-index: 1;
+    top: 170px;
+    left: 50px;
+    padding: 8px 0;
 }
 
 /*NAVBAR*/
 
+.blur {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    -webkit-filter:blur(2px);
+    -moz-filter:blur(2px);
+    -o-filter:blur(2px);
+    filter:blur(2px);
+}
+
 .navbar {
     background: #36384C;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1000;
 }
 
 .nav-item::after {
@@ -166,6 +152,28 @@ p, .h6, h2 {
     color: #E9DCCD;
 }
 
-p {
-    background: url("img/fill.png");
+
+/*BUTTON OVERRIDE*/
+
+.bttn-unite.bttn-danger::after {
+    background: #e6a4b4 !important;
+}
+
+.bttn-unite.bttn-danger::before {
+    background: #c86b85 !important;
+}
+
+.bttn-unite.bttn-danger {
+    border-color: transparent !important;
+    color: #771144 !important;
+}
+
+.bttn-unite {
+    border: none !important;
+    background: #F8E5DFB3 !important;
+}
+
+.bttn-unite.bttn-sm:focus, .bttn-unite.bttn-sm:hover {
+    box-shadow: 0 1px 6px rgba(58, 51, 53, 0.35) !important;
+    color: #fffafe !important;
 }

@@ -1,7 +1,3 @@
-#6
-
-Refactoring Synchronized .jsp among team.
-
 #7
 
 Banyak fitur yang kurang.
@@ -10,6 +6,8 @@ melengkapi desain jsp
 
 membuat form login dan pengubahan accesibility "permit-all"
 
-view update customer
+view deposit, withdraw, transfer form and result.
 
-view result customer dkk.
+firefox confirm both true and false return true.( onDelete() )
+
+redisplay search, select etc.

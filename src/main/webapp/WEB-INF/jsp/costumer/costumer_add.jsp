@@ -15,43 +15,74 @@
     <div class="container-table100">
         <div class="wrap-table100" style="width: 1000px">
             <div class="table100">
-                <div class="col-sm-5">
-                    <h2>Add an Customer</h2>
-                    <form:form method="POST" action="/miniapp/costumer/add">
+                <div class="col-sm-6">
+                    <h2 style="padding-left: 37px">Add an Customer</h2>
+                    <br>
+                    <form:form id="myForm" method="POST" action="/miniapp/costumer/add">
                     <table>
-                        <tr>
-                            <td><form:label path="name">Name</form:label></td>
-                            <td><form:input path="name"/></td>
+                        <tr class="table100-head">
+                            <th><form:label cssClass="column1"
+                                            cssStyle="color: black; padding-right: 100px; display: ruby"
+                                            path="name">Name</form:label></th>
+                            <td style="padding-left: 50px"><form:input cssClass="column6 form-control form-control-sm"
+                                                                       cssStyle="text-align: left; width: 210px; padding-right: 10px; padding-left: 15px"
+                                                                       path="name"/></td>
 
                         </tr>
-                        <tr>
-                            <td><form:label path="id_Number">Identity Number</form:label></td>
-                            <td><form:input type="number" minlength="10" maxlength="10" path="id_Number"
-                                            required="required"/></td>
+                        <tr class="table100-head">
+                            <th><form:label cssClass="column1"
+                                            cssStyle="color: black; padding-right: 100px; display: ruby"
+                                            path="id_Number">Identity Number</form:label></th>
+                            <td style="padding-left: 50px"><form:input cssClass="column6 form-control form-control-sm"
+                                                                       cssStyle="text-align: left; width: 210px; padding-right: 10px; padding-left: 15px"
+                                                                       type="number" path="id_Number"
+                                                                       required="required"/></td>
                         </tr>
-                        <tr>
-                            <td><form:label path="mother_Name">Mother Name</form:label></td>
-                            <td><form:input path="mother_Name"/></td>
+                        <tr class="table100-head">
+                            <th><form:label cssClass="column1"
+                                            cssStyle="color: black; padding-right: 100px; display: ruby"
+                                            path="mother_Name">Mother Name</form:label></th>
+                            <td style="padding-left: 50px"><form:input cssClass="column6 form-control form-control-sm"
+                                                                       cssStyle="text-align: left; width: 210px; padding-right: 10px; padding-left: 15px"
+                                                                       path="mother_Name"/></td>
                         </tr>
-                        <tr>
-                            <td><form:label path="address">Address</form:label></td>
-                            <td><form:input path="address"/></td>
+                        <tr class="table100-head">
+                            <th><form:label cssClass="column1"
+                                            cssStyle="color: black; padding-right: 100px; display: ruby"
+                                            path="address">Address</form:label></th>
+                            <td style="padding-left: 50px"><form:input cssClass="column6 form-control form-control-sm"
+                                                                       cssStyle="text-align: left; width: 210px; padding-right: 10px; padding-left: 15px"
+                                                                       path="address"/></td>
                         </tr>
-                        <tr>
-                            <td><form:label path="birth_Date">Birth_Date</form:label></td>
-                            <td><form:input type="date" width="276" path="birth_Date"/></td>
+                        <tr class="table100-head">
+                            <th><form:label cssClass="column1"
+                                            cssStyle="color: black; padding-right: 100px; display: ruby"
+                                            path="birth_Date">Birth_Date</form:label></th>
+                            <td style="padding-left: 50px"><form:input cssClass="column6 form-control form-control-sm"
+                                                                       cssStyle="text-align: left; width: 210px; padding-right: 10px; padding-left: 15px"
+                                                                       type="date" width="276"
+                                                                       path="birth_Date"/></td>
                         </tr>
                     </table>
                     <br>
-                    <button type="submit" value="Submit" class="bttn-unite bttn-sm bttn-danger">Submit</button>
+                    <div align="center">
+                        <button type="submit" value="Submit" class="bttn-unite bttn-sm bttn-danger">Submit</button>
+                        &nbsp;
+                        <button type="button" value="Reset" class="bttn-unite bttn-sm bttn-danger"
+                                onclick="resetform()">Reset
+                        </button>
+                    </div>
                 </div>
                 </form:form>
             </div>
         </div>
     </div>
 </div>
-</div>
-
+<script>
+    function resetform() {
+        document.getElementById("myForm").reset();
+    }
+</script>
 </body>
 <%@ include file="../layout/footer.jsp" %>
 </html>

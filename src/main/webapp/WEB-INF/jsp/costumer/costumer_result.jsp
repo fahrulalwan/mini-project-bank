@@ -12,32 +12,40 @@
     <div class="container-table100">
         <div class="wrap-table100">
             <div class="table100">
-                <h2 class="column1">Account Information</h2>
+                <div class="col-sm-5">
 
-                <br>
-
-                <table>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Name</th>
-                        <td>${costumer.name}</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Identity Number</th>
-                        <td>${costumer.id_Number}</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Mother Name</th>
-                        <td>${costumer.mother_Name}</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Address</th>
-                        <td>${costumer.address}</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Birth Date</th>
-                        <td>${costumer.birth_Date}</td>
-                    </tr>
-                </table>
+                    <h2 style="padding-left: 37px">Customer Information</h2>
+                    <br>
+                    <table>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Name</th>
+                            <td style="padding-left: 50px">${costumer.name}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Identity Number</th>
+                            <td style="padding-left: 50px">${costumer.id_Number}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Mother Name</th>
+                            <td style="padding-left: 50px">${costumer.mother_Name}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Address</th>
+                            <td style="padding-left: 50px">${costumer.address}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Birth Date</th>
+                            <td style="padding-left: 50px">${costumer.birth_Date}</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div align="center">
+                        <button class="bttn-unite bttn-sm bttn-danger" title="Visit Customer Info"
+                                onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${costumer.id}'">
+                            &nbsp; Visit Customer Info &nbsp;
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

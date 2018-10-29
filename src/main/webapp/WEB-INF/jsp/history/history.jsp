@@ -9,7 +9,7 @@
 
 <div class="limiter">
     <div class="container-table100">
-        <div class="wrap-table100" style="width: 1050px">
+        <div class="wrap-table100" style="  width: 1050px">
             <div class="table100">
                 <div class="container">
                     <div class="row">
@@ -22,7 +22,8 @@
                             <br>
                             <input type="text" id="myInput" onkeyup="myFunction()"
                                    placeholder="Search for Accounts.." class="align-self-end"
-                                   title="Type a name" style="padding-top: 3px; padding-left: 10px; padding-bottom: 2px">
+                                   title="Type a name"
+                                   style="padding-top: 3px; padding-left: 10px; padding-bottom: 2px">
                         </div>
                     </div>
                 </div>

@@ -8,36 +8,60 @@
 <body>
 <%@include file="../layout/navbar.jsp" %>
 
-<div class="container-fluid">
+<div class="limiter">
 
-    <div class="wrapper">
+    <div class="container-table100">
+        <div class="wrap-table100" style="width: 1050px">
+            <div class="table100">
+                <div class="col-sm-6">
+                    <h2 style="padding-left: 37px">Account Deposit</h2>
+                    <br>
+                    <form:form id="myForm" method="POST" action="/miniapp/account/addDeposit">
+                        <table>
 
-        <div id="main" class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5">
-                <h2>Deposit an Account</h2>
-                <form:form method="POST" action="/miniapp/account/addDeposit">
-                    <table class="table table-hover">
+                            <tr class="table100-head">
+                                <th><form:label cssClass="column1"
+                                                cssStyle="color: black; padding-right: 100px; display: ruby"
+                                                path="accountNumber">Account Number
+                                </form:label>
+                                </th>
+                                <td style="padding-left: 50px"><form:input
+                                        cssClass="column6 form-control form-control-sm"
+                                        cssStyle="text-align: left; width: 210px; padding-right: 10px"
+                                        path="accountNumber" readonly="true"/></td>
+                            </tr>
 
-                        <tr>
-                            <td>Account Number :</td>
-                            <td><form:input path="accountNumber" readonly="true"/></td>
-                        </tr>
-
-                        <tr>
-                            <td>Amount :</td>
-                            <td><form:input path="amount"/></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2" align="center"><input type="submit" value="Deposit"/></td>
-                        </tr>
-                    </table>
-                </form:form>
+                            <tr class="table100-head">
+                                <th><form:label cssClass="column1"
+                                                cssStyle="color: black; padding-right: 100px; display: ruby"
+                                                path="amount">Amount
+                                </form:label>
+                                </th>
+                                <td style="padding-left: 50px"><form:input
+                                        cssClass="column6 form-control form-control-sm"
+                                        cssStyle="text-align: left; width: 210px; padding-right: 10px" type="text"
+                                        path="amount"/></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div align="center">
+                            <button type="submit" value="Submit" class="bttn-unite bttn-sm bttn-danger">Submit</button>
+                            &nbsp;
+                            <button type="button" value="Reset" class="bttn-unite bttn-sm bttn-danger"
+                                    onclick="resetform()">Reset
+                            </button>
+                        </div>
+                    </form:form>
+                </div>
             </div>
         </div>
     </div>
-
+</div>
+<script>
+    function resetform() {
+        document.getElementById("myForm").reset();
+    }
+</script>
 </body>
 <%@ include file="../layout/footer.jsp" %>
 </html>

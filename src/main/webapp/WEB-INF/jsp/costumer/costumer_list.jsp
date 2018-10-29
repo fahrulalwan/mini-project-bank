@@ -22,7 +22,8 @@
                             <br>
                             <input type="text" id="myInput" onkeyup="myFunction()"
                                    placeholder="Search for Accounts.." class="align-self-end"
-                                   title="Type a name" style="padding-top: 3px; padding-left: 10px; padding-bottom: 2px">
+                                   title="Type a name"
+                                   style="padding-top: 3px; padding-left: 10px; padding-bottom: 2px">
                         </div>
                     </div>
                 </div>
@@ -49,8 +50,9 @@
                             <td class="column5"><c:out value="${costumer.birth_Date}"/></td>
                             <td class="column2">
                                 <button class="bttn-unite bttn-sm bttn-danger"
-                                        onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${costumer.id}'"/>
-                                Visit
+                                        onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${costumer.id}'">
+                                    &nbsp; Visit &nbsp;
+                                </button>
                             </td>
 
                         </tr>

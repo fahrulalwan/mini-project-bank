@@ -50,10 +50,13 @@ public class CostumerController {
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
-	public RedirectView editCostumer(@ModelAttribute("costumer") Costumer costumer,
-			ModelMap model) {
+	public String editCostumer(@ModelAttribute("costumer") Costumer costumer,
+			ModelMap model, Integer id) {
 		costumerService.editCostumer(costumer);
-		return new RedirectView("../costumer/list");
+		// nambahin.
+		model.addAttribute("costumer", costumerService.getCostumer(id));
+		return "costumer/costumer_view";
+//		return new RedirectView("../costumer/view");
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)

@@ -12,27 +12,35 @@
     <div class="container-table100">
         <div class="wrap-table100">
             <div class="table100">
-                <h2 class="column1">Account Information</h2>
+                <div class="col-sm-5">
+                    <h2 style="padding-left: 37px">Account Information</h2>
+                    <br>
 
-                <br>
-
-                <table>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Name</th>
-                        <td>${account.name}</td>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Type</th>
-                        <td>${account.type}</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Account Number</th>
-                        <td>${account.accountNumber}</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Balance</th>
-                        <td>Rp. ${account.balance},-</td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Name</th>
+                            <td style="padding-left: 50px">${account.name}</td>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Type</th>
+                            <td style="padding-left: 50px">${account.type}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Account Number</th>
+                            <td style="padding-left: 50px">${account.accountNumber}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Balance</th>
+                            <td style="padding-left: 50px">Rp. ${account.balance},-</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div align="center">
+                        <button class="bttn-unite bttn-sm bttn-danger" title="Visit Customer Info"
+                                onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${account.cid}'">
+                            &nbsp; Back &nbsp;
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
