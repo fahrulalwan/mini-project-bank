@@ -16,7 +16,7 @@
                 <div class="col-sm-5">
                     <h2 style="padding-left: 37px">Add an Account</h2>
                     <br>
-                    <form:form id="myForm" method="POST" action="/miniapp/account/add">
+                    <form:form id="myForm" method="POST" action="/miniapp/account/add" onsubmit="verifyAccount()">
                         <form:input type="hidden" path="cid" readonly="true"/>
                         <table>
                             <tr>
@@ -67,6 +67,11 @@
 
     function resetform() {
         document.getElementById("myForm").reset();
+    }
+
+    function verifyAccount() {
+        var r = confirm("Are you sure want to add Account?");
+        return r === true;
     }
 </script>
 </body>

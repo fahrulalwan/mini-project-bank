@@ -16,7 +16,7 @@
                 <div class="col-sm-6">
                     <h2 style="padding-left: 37px">Customer Edit</h2>
                     <br>
-                    <form:form id="myForm" method="POST" action="/miniapp/costumer/edit">
+                    <form:form id="myForm" method="POST" action="/miniapp/costumer/edit" onsubmit="verifyEdit()">
                         <td><form:input type="hidden" readonly="true" path="id"/></td>
                         <table>
                             <tr class="table100-head">
@@ -77,6 +77,11 @@
 <script>
     function resetform() {
         document.getElementById("myForm").reset();
+    }
+
+    function verifyEdit() {
+        var r = confirm("Are you sure want to edit Customer Info?");
+        return r === true;
     }
 </script>
 </body>

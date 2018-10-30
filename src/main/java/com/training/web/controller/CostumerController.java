@@ -27,7 +27,7 @@ public class CostumerController {
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public String getCostumer(@RequestParam("id") Integer id,
 			ModelMap model) {
-		model.addAttribute("costumer", costumerService.getCostumer(id));	
+		model.addAttribute("costumer", costumerService.getCostumer(id));
 		Costumer x = costumerService.getCostumer(id);
 		return "costumer/costumer_view";
 	}

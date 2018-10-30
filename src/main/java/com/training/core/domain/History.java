@@ -12,7 +12,6 @@ public class History implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer hid;
-
     private Integer norek;
     private String tipe;
     private Integer amount;

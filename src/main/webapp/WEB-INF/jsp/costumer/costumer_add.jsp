@@ -18,7 +18,7 @@
                 <div class="col-sm-6">
                     <h2 style="padding-left: 37px">Add an Customer</h2>
                     <br>
-                    <form:form id="myForm" method="POST" action="/miniapp/costumer/add">
+                    <form:form id="myForm" method="POST" action="/miniapp/costumer/add" onsubmit="verifyAdd()">
                     <table>
                         <tr class="table100-head">
                             <th><form:label cssClass="column1"
@@ -81,6 +81,11 @@
 <script>
     function resetform() {
         document.getElementById("myForm").reset();
+    }
+
+    function verifyAdd() {
+        var r = confirm("Are you sure want to Add Customer?");
+        return r === true;
     }
 </script>
 </body>

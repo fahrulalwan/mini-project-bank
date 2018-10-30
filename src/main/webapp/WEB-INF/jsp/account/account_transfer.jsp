@@ -8,39 +8,68 @@
 <body>
 <%@include file="../layout/navbar.jsp" %>
 
-<div class="container-fluid">
+<div class="limiter">
 
-    <div class="wrapper">
-
-        <div id="main" class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5">
-                <h2>Account Transfer</h2>
-                <form:form method="POST" action="/miniapp/account/addTransfer">
-                <table class="table table-hover">
-                    <tr>
-                        <td>Account Number :</td>
-                        <td><form:input readonly="true" path="accountNumber"/></td>
-                    </tr>
-                    <tr>
-                        <td>Amount :</td>
-                        <td><form:input path="amount"/></td>
-                    </tr>
-                    <tr>
-                        <td>Rekening Tujuan :</td>
-                        <td><form:input path="rekTujuan"/></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><input type="submit" value="Transfer"/></td>
-                    </tr>
-                </table>
+    <div class="container-table100">
+        <div class="wrap-table100" style="width: 1050px">
+            <div class="table100">
+                <div class="col-sm-6">
+                    <h2 style="padding-left: 37px">Account Deposit</h2>
+                    <br>
+                    <form:form method="POST" action="/miniapp/account/addTransfer" onsubmit="verifyTransfer()">
+                        <table>
+                            <tr class="table100-head">
+                                <th><form:label cssClass="column1"
+                                                cssStyle="color: black; padding-right: 100px; display: ruby"
+                                                path="accountNumber">Account Number</form:label>
+                                </th>
+                                <td>
+                                    <form:input readonly="true" path="accountNumber"
+                                                cssClass="column6 form-control form-control-sm"
+                                                cssStyle="text-align: left; width: 210px; padding-right: 10px"/></td>
+                            </tr>
+                            <tr class="table100-head">
+                                <th><form:label cssClass="column1"
+                                                cssStyle="color: black; padding-right: 100px; display: ruby"
+                                                path="amount">Amount</form:label>
+                                </th>
+                                <td><form:input path="amount" placeholder="Rp."
+                                                cssClass="column6 form-control form-control-sm"
+                                                cssStyle="text-align: left; width: 210px; padding-right: 10px"/></td>
+                            </tr>
+                            <tr class="table100-head">
+                                <th><form:label cssClass="column1"
+                                                cssStyle="color: black; padding-right: 100px; display: ruby"
+                                                path="rekTujuan">Account Destination</form:label>
+                                </th>
+                                <td><form:input path="rekTujuan" cssClass="column6 form-control form-control-sm"
+                                                cssStyle="text-align: left; width: 210px; padding-right: 10px"/></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div align="center">
+                            <button type="submit" value="Submit" class="bttn-unite bttn-sm bttn-danger">Submit</button>
+                            &nbsp;
+                            <button type="button" value="Reset" class="bttn-unite bttn-sm bttn-danger"
+                                    onclick="resetform()">Reset
+                            </button>
+                        </div>
+                    </form:form>
+                </div>
             </div>
-            </form:form>
-
         </div>
     </div>
+</div>
+<script>
+    function resetform() {
+        document.getElementById("myForm").reset();
+    }
 
+    function verifyTransfer() {
+        var r = confirm("Are you sure want to transfer this Account?");
+        return r === true;
+    }
+</script>
 </body>
 <%@ include file="../layout/footer.jsp" %>
 </html>

@@ -7,42 +7,48 @@
 <body>
 <%@include file="../layout/navbar.jsp" %>
 
-<div class="container-fluid">
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <div class="col-sm-5">
+                    <h2 style="padding-left: 37px">Account Information</h2>
+                    <br>
 
-    <div class="wrapper">
-
-        <div id="main" class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4">
-                <h2>Withdraw Result</h2>
-                <table class="table table-hover">
-                    <tr>
-                        <td>Name</td>
-                        <td>${tarik.name}</td>
-                    </tr>
-                    <tr>
-                        <td>Account Number</td>
-                        <td>${tarik.accountNumber}</td>
-                    </tr>
-                    <tr>
-                        <td>Saldo Sebelumnya</td>
-                        <td>Rp. ${tarik.balance + withdraw.amount},-</td>
-                    <tr>
-                        <td>Jumlah Deposit</td>
-                        <td>Rp. ${withdraw.amount},-</td>
-                    </tr>
-                    <tr>
-                        <td>Saldo setelahnya</td>
-                        <td>Rp. ${tarik.balance},-</td>
-                    </tr>
-
-                </table>
+                    <table>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Name</th>
+                            <td style="padding-left: 50px">${tarik.name}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Account Number</th>
+                            <td style="padding-left: 50px">${tarik.accountNumber}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Saldo Sebelumnya</th>
+                            <td style="padding-left: 50px">Rp. ${tarik.balance + withdraw.amount},-</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Jumlah Deposit</th>
+                            <td style="padding-left: 50px">Rp. ${withdraw.amount},-</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Saldo setelahnya</th>
+                            <td style="padding-left: 50px">Rp. ${tarik.balance},-</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div align="center">
+                        <button class="bttn-unite bttn-sm bttn-danger" title="Visit Customer Info"
+                                onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${costumer.cid}'">
+                            &nbsp; Back &nbsp;
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </div>
-
 </body>
 <%@ include file="../layout/footer.jsp" %>
 </html>

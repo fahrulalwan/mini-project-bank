@@ -16,7 +16,8 @@
                 <div class="col-sm-6">
                     <h2 style="padding-left: 37px">Account Deposit</h2>
                     <br>
-                    <form:form id="myForm" method="POST" action="/miniapp/account/addDeposit">
+                    <form:form id="myForm" method="POST" action="/miniapp/account/addDeposit"
+                               onsubmit="verifyDeposit()">
                         <table>
 
                             <tr class="table100-head">
@@ -40,7 +41,7 @@
                                 <td style="padding-left: 50px"><form:input
                                         cssClass="column6 form-control form-control-sm"
                                         cssStyle="text-align: left; width: 210px; padding-right: 10px" type="text"
-                                        path="amount"/></td>
+                                        path="amount" placeholder="Rp."/></td>
                             </tr>
                         </table>
                         <br>
@@ -60,6 +61,11 @@
 <script>
     function resetform() {
         document.getElementById("myForm").reset();
+    }
+
+    function verifyDeposit() {
+        var r = confirm("Are you sure want to deposit this Account?");
+        return r === true;
     }
 </script>
 </body>

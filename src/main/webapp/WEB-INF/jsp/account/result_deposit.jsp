@@ -7,41 +7,47 @@
 <body>
 <%@include file="../layout/navbar.jsp" %>
 
-<div class="container-fluid">
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <div class="col-sm-5">
+                    <h2 style="padding-left: 37px">Account Information</h2>
+                    <br>
 
-    <div class="wrapper">
-
-        <div id="main" class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4">
-                <h2>Deposit Result</h2>
-                <table class="table table-hover">
-                    <tr>
-                        <td>Name</td>
-                        <td>${simpen.name}</td>
-                    </tr>
-                    <tr>
-                        <td>Account Number</td>
-                        <td>${simpen.accountNumber}</td>
-                    </tr>
-                    <tr>
-                        <td>Saldo Sebelumnya</td>
-                        <td>Rp. ${simpen.balance - deposit.amount},-</td>
-                    <tr>
-                        <td>Jumlah Deposit</td>
-                        <td>Rp. ${deposit.amount},-</td>
-                    </tr>
-                    <tr>
-                        <td>Saldo setelahnya</td>
-                        <td>Rp. ${simpen.balance},-</td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Name</th>
+                            <td style="padding-left: 50px">${simpen.name}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Account Number</th>
+                            <td style="padding-left: 50px">${simpen.accountNumber}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Saldo Sebelumnya</th>
+                            <td style="padding-left: 50px">Rp. ${simpen.balance - deposit.amount},-</td>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Jumlah Deposit</th>
+                            <td style="padding-left: 50px">Rp. ${deposit.amount},-</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; width: 200px">Saldo setelahnya</th>
+                            <td style="padding-left: 50px">Rp. ${simpen.balance},-</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div align="center">
+                        <button class="bttn-unite bttn-sm bttn-danger" title="Back"
+                                onclick="window.location.href='/miniapp/costumer/list'">
+                            &nbsp;Customer List&nbsp;
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </div>
-
 </body>
 <%@ include file="../layout/footer.jsp" %>
 </html>

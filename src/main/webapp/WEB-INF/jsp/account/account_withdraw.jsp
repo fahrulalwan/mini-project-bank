@@ -14,9 +14,10 @@
         <div class="wrap-table100" style="width: 1050px">
             <div class="table100">
                 <div class="col-sm-6">
-                    <h2 style="padding-left: 37px">Account Deposit</h2>
+                    <h2 style="padding-left: 37px">Account Withdraw</h2>
                     <br>
-                    <form:form id="myForm" method="POST" action="/miniapp/account/addWithdraw">
+                    <form:form id="myForm" method="POST" action="/miniapp/account/addWithdraw"
+                               onsubmit="verifyWithdraw()">
                         <table>
 
                             <tr class="table100-head">
@@ -35,7 +36,7 @@
                                                 path="amount">Amount</form:label></th>
                                 <td style="padding-left: 50px"><form:input
                                         cssClass="column6 form-control form-control-sm"
-                                        cssStyle="text-align: left; width: 210px; padding-right: 10px" id="rupiah"
+                                        cssStyle="text-align: left; width: 210px; padding-right: 10px"
                                         placeholder="Rp." path="amount"/></td>
                             </tr>
                         </table>
@@ -44,7 +45,8 @@
                             <button type="submit" value="Submit" class="bttn-unite bttn-sm bttn-danger">Submit</button>
                             &nbsp;
                             <button type="button" value="Reset" class="bttn-unite bttn-sm bttn-danger"
-                                    onclick="resetform()">Reset</button>
+                                    onclick="resetform()">Reset
+                            </button>
                         </div>
                     </form:form>
                 </div>
@@ -57,30 +59,9 @@
         document.getElementById("myForm").reset();
     }
 
-    var rupiah = document.getElementById("rupiah");
-    rupiah.addEventListener("keyup", function (e) {
-        // tambahkan 'Rp.' pada saat form di ketik
-        // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-        rupiah.value = formatRupiah(this.value);
-    });
-
-
-    /* Fungsi formatRupiah */
-    function formatRupiah(angka, prefix) {
-        var number_string = angka.replace(/[^,\d]/g, "").toString(),
-            split = number_string.split(","),
-            sisa = split[0].length % 3,
-            rupiah = split[0].substr(0, sisa),
-            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-        // tambahkan titik jika yang di input sudah menjadi angka ribuan
-        if (ribuan) {
-            separator = sisa ? "." : "";
-            rupiah += separator + ribuan.join(".");
-        }
-
-        rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
-        return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
+    function verifyWithdraw() {
+        var r = confirm("Are you sure want to withdraw this Account?");
+        return r === true;
     }
 </script>
 </body>

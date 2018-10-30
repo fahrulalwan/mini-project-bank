@@ -42,7 +42,7 @@
                     <div align="center">
                         <button class="bttn-unite bttn-sm bttn-danger" title="Visit Customer Info"
                                 onclick="window.location.href='http://localhost:8080/miniapp/costumer/view?id=${costumer.id}'">
-                            &nbsp; Visit Customer Info &nbsp;
+                            &nbsp;Customer Info&nbsp;
                         </button>
                     </div>
                 </div>

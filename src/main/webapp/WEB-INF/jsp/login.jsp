@@ -13,38 +13,38 @@
 <div id="navwrapper">
     <div id="navbar">
         <c:url var="loginUrl" value="/login"/>
-        <form action="${loginUrl}" method="post">
-
-
+        <form action="${loginUrl}" method="post" class="form-horizontal">
+            <c:if test="${param.error != null}">
+                   <script>alert("Invalid username or password.")</script>
+            </c:if>
+            <c:if test="${param.logout != null}">
+                    <script>alert("Logout Successfully.")</script>
+            </c:if>
             <table class="tablewrapper">
-
                 <tr>
                     <td class="row1">Email or Phone</td>
                     <td class="row1">Password</td>
                 </tr>
 
                 <tr>
-
                     <td>
                         <label>
                             <input type="text" class="inputtext" id="username" name="ssoId" placeholder="Enter Username"
                                    required>
                         </label>
                     </td>
-
                     <td>
                         <label>
                             <input type="text" class="inputtext" id="password" name="password"
                                    placeholder="Enter Password" required>
                         </label>
                     </td>
-
                     <td>
                         <div>
-                            <button id="button" type="submit" onclick="loginAccess()">Log In</button>
+                            <input type="submit" id="button" align="middle"
+                                   class="uiButton uiButtonConfirm" value="Log in">
                         </div>
                     </td>
-
                 </tr>
 
                 <tr>
@@ -57,9 +57,7 @@
                     </td>
 
                     <td class="row2 h">Forgot your password?</td>
-
                 </tr>
-
             </table>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
@@ -188,7 +186,9 @@
                       value="1907">1907</option><option value="1906">1906</option><option
                       value="1905">1905</option></select>
             </span>
-            <div class="fb1 why h">Why do I need to provide my birthday?</div></div>
+              <div class="fb1 why h">Why do I need to provide my birthday?</div>
+          </span>
+            </div>
             <div class="formbox mt1">
               <span data-type="radio" class="spanpad">
                 <input type="radio" id="fem" class="m0">
@@ -228,7 +228,7 @@
         var a = document.getElementById("username");
         var b = document.getElementById("password");
 
-        if (${param.error != null}) {
+        if (a === false || b === false) {
             alert("Invalid username and password.");
         } else if (${param.error == null}) {
             alert("Please insert the form.");
@@ -237,5 +237,29 @@
         }
     }
 </script>
-
+<style>
+    .uiButtonConfirm {
+        background-color: #4267b2;
+        border-color: #29487d;
+    }
+    .uiButton, .uiButtonSuppressed:active, .uiButtonSuppressed:focus, .uiButtonSuppressed:hover {
+        background-color: #f5f6f7;
+        border: 1px solid rgb(204, 208, 213);
+    }
+    .uiButton {
+        border-radius: 2px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: bold;
+        line-height: 18px;
+        padding: 2px 6px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: none;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+</style>
 </html>

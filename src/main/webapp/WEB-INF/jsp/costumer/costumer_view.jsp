@@ -40,7 +40,7 @@
             </table>
             <br>
             <div align="center">
-                <form:form method="POST" action="/miniapp/costumer/delete?id=${costumer.id}">
+                <form:form method="POST" action="/miniapp/costumer/delete?id=${costumer.id}" onsubmit="verifyDelete()">
                     <button type="button" class="bttn-unite bttn-sm bttn-danger" value="Update"
                             onclick="document.location='/miniapp/costumer/form_edit?id=${costumer.id}'">Update
                     </button>
@@ -60,53 +60,69 @@
         <div class="col-sm-1" style="left: 340px"></div>
 
         <div class="col-sm-4" style="top: -10px; left: 330px">
-            <h2 style="padding-left: 37px">Accounts</h2>
+
+            <c:set var="total" value="${0}"/>
+            <c:forEach var="account" items="${costumer.daftaracc}">
+                <c:set var="total" value="${total + 1}"/>
+            </c:forEach>
+
             <br>
-            <table>
-                <c:forEach var="account" items="${costumer.daftaracc}">
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Type</th>
-                        <td class="column4">${account.type}</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Balance</th>
-                        <td class="column4">Rp. ${account.balance},-</td>
-                    </tr>
-                    <tr class="table100-head">
-                        <th class="column1" style="color: black; padding-right: 50px">Account Number</th>
-                        <td class="column4">${account.accountNumber}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td></td>
-                    </tr>
-                </c:forEach>
-            </table>
-            <br>
-            <div align="center">
-                <form style="color:#E9DCCD;">
-                    Pilih Rekening : &nbsp;
-                    <label for="list"><select id="list" name="accountlist">
-                        <c:forEach items="${costumer.daftaracc}" var="account">
-                            <option id="a" value="${account.accountNumber}">${account.accountNumber}</option>
-                        </c:forEach>
-                    </select>
-                    </label>
 
-                    <br><br>
+            <c:if test="${total > 0}">
+                <h2 style="padding-left: 37px">Accounts</h2>
+                <br>
+                <table>
+                    <c:forEach var="account" items="${costumer.daftaracc}">
 
-                    <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Deposit"
-                            onclick="deposit()">Deposit
-                    </button> &nbsp;
-                    <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Withdraw"
-                            onclick="withdraw()">Withdraw
-                    </button> &nbsp;
-                    <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Transfer"
-                            onclick="transfer()">Transfer
-                    </button>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; padding-right: 50px">Type</th>
+                            <td class="column4">${account.type}</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; padding-right: 50px">Balance</th>
+                            <td class="column4">Rp. ${account.balance},-</td>
+                        </tr>
+                        <tr class="table100-head">
+                            <th class="column1" style="color: black; padding-right: 50px">Account Number</th>
+                            <td class="column4">${account.accountNumber}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                <br>
+                <br>
+                <div align="center">
+                    <form style="color:#E9DCCD;">
+                        Pilih Rekening : &nbsp;
+                        <label for="list"><select id="list" name="accountlist">
+                            <c:forEach items="${costumer.daftaracc}" var="account">
+                                <option id="a" value="${account.accountNumber}">${account.accountNumber}</option>
+                            </c:forEach>
+                        </select>
+                        </label>
 
-                </form>
-            </div>
+                        <br><br>
+
+                        <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Deposit"
+                                onclick="deposit()">Deposit
+                        </button> &nbsp;
+                        <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Withdraw"
+                                onclick="withdraw()">Withdraw
+                        </button> &nbsp;
+                        <button class="bttn-unite bttn-sm bttn-danger" type="button" value="Transfer"
+                                onclick="transfer()">Transfer
+                        </button>
+
+                    </form>
+                </div>
+            </c:if>
+            <c:if test="${total < 1}">
+                <h1 align="center">Currently,<br><br>you have no Account.<br> : (</h1>
+            </c:if>
+
         </div>
 
     </div>
@@ -139,11 +155,17 @@
         document.location.href = "/miniapp/account/form_add/" + accountId;
     }
 
-    function confirmDelete() {
-        var r = confirm("Are you sure want to delete?");          // gabisaaaa :(
-        if (r) {
-            document.location.href = "/miniapp/account/list/";
-        }
+    function verifyDelete() {
+        var r = confirm("Are you sure want to delete?");
+        return r === true;
     }
 </script>
+<style>
+    h1 {
+        font-family: 'Open Sans';
+        font-weight: 300;
+        text-align: center;
+        color: #36384C !important;
+    }
+</style>
 </html>
