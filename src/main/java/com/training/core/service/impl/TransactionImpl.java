@@ -46,18 +46,23 @@ public class TransactionImpl implements Transaction {
 
         Integer norek = withdraw.getAccountNumber();
         Account acc = accountDao.selectAccountByAccountNumber(norek);
-        acc.setBalance(acc.getBalance() - withdraw.getAmount());
-        accountDao.updateAccount(acc);
 
-        History createHistory = new History();
-        createHistory.setHid(historyDao.countHistory() + 1);
-        createHistory.setActivity("Withdraw");
-        createHistory.setAmount(withdraw.getAmount());
-        createHistory.setNorek(norek);
-        createHistory.setTipe(acc.getType());
+        if (acc.getBalance() >= withdraw.getAmount() && acc.getBalance() >= 50000) {
 
-        historyDao.insertHistory(createHistory);
+            acc.setBalance(acc.getBalance() - withdraw.getAmount());
+            accountDao.updateAccount(acc);
 
+            History createHistory = new History();
+            createHistory.setHid(historyDao.countHistory() + 1);
+            createHistory.setActivity("Withdraw");
+            createHistory.setAmount(withdraw.getAmount());
+            createHistory.setNorek(norek);
+            createHistory.setTipe(acc.getType());
+
+            historyDao.insertHistory(createHistory);
+        } else {
+            System.out.println("Insufficient Fund");
+        }
         return acc;
     }
 
@@ -75,25 +80,23 @@ public class TransactionImpl implements Transaction {
             acc1.setBalance(acc1.getBalance() - transfer.getAmount());
             acc2.setBalance(acc2.getBalance() + transfer.getAmount());
 
+            History createHistory = new History();
+
+            createHistory.setHid(historyDao.countHistory() + 1);
+            createHistory.setActivity("Transfer");
+            createHistory.setAmount(transfer.getAmount());
+            createHistory.setNorek(norek1);
+            createHistory.setTipe(acc1.getType());
+            createHistory.setRekTujuan(norek2);
+
+            historyDao.insertHistory(createHistory);
         } else {
             System.out.println("Insufficient Fund");
         }
         accountDao.updateAccount(acc1);
         accountDao.updateAccount(acc2);
-
-        History createHistory = new History();
-
-        createHistory.setHid(historyDao.countHistory() + 1);
-        createHistory.setActivity("Transfer");
-        createHistory.setAmount(transfer.getAmount());
-        createHistory.setNorek(norek1);
-        createHistory.setTipe(acc1.getType());
-        createHistory.setRekTujuan(norek2);
-
-        historyDao.insertHistory(createHistory);
         return acc1;
     }
-
 
 
 }

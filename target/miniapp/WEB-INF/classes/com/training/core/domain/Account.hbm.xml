@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.training.core.domain.Account" table="Account">
+        <id name="id" type="integer">
+            <column name="ID" precision="20" not-null="true" />
+            <generator class="increment"/>
+        </id>
+        <property name="cid" type="integer">
+            <column name="CID" precision="20" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="255" not-null="true" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="255" not-null="true"/>
+        </property>
+        <property name="balance" type="integer">
+            <column name="BALANCE" precision="255" not-null="true"/>
+        </property>
+        <property name="accountNumber" type="integer">
+            <column name="ACCOUNT_NUMBER" precision="10" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping> 

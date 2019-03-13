@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.training.core.domain.Costumer" table="Costumer">
+        <id name="id" type="integer">
+            <column name="ID" precision="20" not-null="true" />
+            <generator class="increment"/>
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="255" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="255" not-null="true" />
+        </property>
+        <property name="birth_Date" type="string">
+            <column name="BIRTH_DATE" length="255" not-null="true"/>
+        </property>
+        <property name="id_Number" type="integer">
+            <column name="ID_NUMBER" length="20" not-null="true" />
+        </property>
+        <property name="mother_Name" type="string">
+            <column name="IBU_KANDUNG" length="100" not-null="true" />
+        </property>
+        <bag name="daftaracc" cascade="all" lazy="false" inverse="true">
+			<key column="cid"/>
+			<one-to-many class="com.training.core.domain.Account" />
+		</bag>
+    </class>
+</hibernate-mapping> 

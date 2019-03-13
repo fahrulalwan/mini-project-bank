@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.training.core.domain.History" table="history">
+        <id name="hid" type="integer">
+            <column name="hid" precision="20" not-null="true" />
+        </id>
+        <property name="norek" type="integer">
+            <column name="norek" precision="10" not-null="true" />
+        </property>
+        <property name="tipe" type="string">
+            <column name="tipe" length="255" not-null="true" />
+        </property>
+        <property name="amount" type="integer">
+            <column name="amount" precision="255" not-null="true"/>
+        </property>
+        <property name="activity" type="string">
+            <column name="activity" length="255" not-null="true"/>
+        </property>
+        <property name="rekTujuan" type="integer">
+            <column name="rektujuan" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

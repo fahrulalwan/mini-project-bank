@@ -1,0 +1,24 @@
+/*BUTTON OVERRIDE*/
+
+.bttn-unite.bttn-danger::after {
+    background: #e6a4b4 !important;
+}
+
+.bttn-unite.bttn-danger::before {
+    background: #c86b85 !important;
+}
+
+.bttn-unite.bttn-danger {
+    border-color: transparent !important;
+    color: #771144 !important;
+}
+
+.bttn-unite {
+    border: none !important;
+    background: #F8E5DFB3 !important;
+}
+
+.bttn-unite.bttn-sm:focus, .bttn-unite.bttn-sm:hover {
+    box-shadow: 0 1px 6px rgba(58, 51, 53, 0.35) !important;
+    color: #fffafe !important;
+}
